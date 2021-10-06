@@ -89,6 +89,8 @@ module.exports = {
         'body': ['16px', { lineHeight: '24px'}],
         'body-md': ['18px', { lineHeight: '27px'}],
         'body-lg': ['20px', { lineHeight: '30px'}],
+        'body-xl': ['24px', { lineHeight: '36px'}],
+        
 
         'h1': ['27px', { lineHeight: '42px'}],
         'h1-lg': ['42px', { lineHeight: '63px'}],

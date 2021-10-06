@@ -23,7 +23,7 @@
   }
 
   body {
-    @apply relative;
+    @apply relative text-body lg:text-body-lg text-primary font-normal;
     min-height: -webkit-fill-available;
   }
 
@@ -33,28 +33,22 @@
   h4,
   h5,
   h6 {
+    @apply font-poppins font-bold;
   }
 
   h1 {
+    @apply text-h1 lg:text-h1-lg;
   }
 
   h2 {
- 
+    @apply text-h2 lg:text-h2-lg;
   }
 
   h3 {
- 
+    @apply text-h3 lg:text-h3-lg;
   }
 
   h4 {
- 
-  }
-
-  h5 {
-
-  }
-
-  h6 {
-
+    @apply text-h4 lg:text-h4-lg;
   }
 }
