@@ -45,6 +45,16 @@ export default {
   modules: [
     '@nuxt/image'
   ],
+  
+  // Options for @nuxtjs/google-fonts
+  googleFonts: {
+    families: {
+      Roboto: [400, 500,],
+      Poppins: [600, 700, 900],
+    },
+    display: 'swap',
+    useStylesheet: true,
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
@@ -53,5 +63,5 @@ export default {
         'postcss-nested': {}
       }
     },
-  }
+  },
 }

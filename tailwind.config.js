@@ -68,30 +68,41 @@ module.exports = {
         primary: {
           DEFAULT: '#223343',
           light: '#3B4559',
-          'very-light': '#4E5B73',
-          'lightest': '#CAD0DC',
         },
         //Abstract
-        gray: {
-          DEFAULT: '#F2F2F2',
-          '2': '#E9EBEC',
-        },
-
-        yellow: '#FFBA00',
+        gray:'#F2F2F2',
         blue: '#00B2CD',
       },
       fontFamily: {
         roboto: [
           'Roboto',
           'sans-serif',
+          'Arial',
         ],
         poppins: [
           'Poppins',
           'sans-serif',
+          'Arial'
         ],
       },
       fontSize: {
-        'small': ['12px', { lineHeight: '18px'}],
+        'body': ['16px', { lineHeight: '24px'}],
+        'body-md': ['18px', { lineHeight: '27px'}],
+        'body-lg': ['20px', { lineHeight: '30px'}],
+
+        'h1': ['27px', { lineHeight: '42px'}],
+        'h1-lg': ['42px', { lineHeight: '63px'}],
+        'h1-intro': ['28px', { lineHeight: '42px'}],
+        'h1-intro-lg': ['48px', { lineHeight: '72px'}],
+
+        'h2': ['26px', { lineHeight: '39px'}],
+        'h2-lg': ['32px', { lineHeight: '48px'}],
+
+        'h3': ['22px', { lineHeight: '33px'}],
+        'h3-lg': ['24px', { lineHeight: '36px'}],
+
+        'h4': ['18px', { lineHeight: '27px'}],
+        'h4-lg': ['20px', { lineHeight: '30px'}],
       },
     }
   }
