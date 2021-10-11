@@ -1,0 +1,7 @@
+.page {
+    @apply pt-header;
+
+    &__content { 
+        @apply bg-white;
+    }
+}

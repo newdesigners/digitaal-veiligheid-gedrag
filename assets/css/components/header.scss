@@ -1,0 +1,30 @@
+.header {
+    @apply bg-primary h-header fixed top-0 w-full overflow-hidden transition-all duration-500 ease-in-out;
+
+    &__container {
+        @apply flex flex-wrap justify-between my-20;
+    }
+
+    &__nav {
+        @apply w-full order-1 pt-40;
+
+        &-button {
+
+        }
+
+        &-list {
+
+            &-item {
+                @apply pb-20;
+            }
+        }
+
+        &-link {
+            @apply text-white font-poppins font-semibold text-h4;
+        }
+    }
+
+    &--open {
+        @apply h-full max-h-full border-0;
+    }
+}

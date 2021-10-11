@@ -1,0 +1,9 @@
+.logo  {
+    &__title {
+        @apply text-h4 text-green;
+    }
+
+    &__sub-title {
+        @apply text-sub font-poppins font-bold text-white;
+    }
+}
