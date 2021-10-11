@@ -107,10 +107,13 @@ module.exports = {
         'h4': ['18px', { lineHeight: '27px'}],
         'h4-lg': ['20px', { lineHeight: '30px'}],
 
+        'h5': ['14px', { lineHeight: '21px'}],
+        
         'sub': ['12px', { lineHeight: '18px'}],
       },
       width: {
         'initial': 'initial',
+        'hhs-logo': '95px',
       },
       height: {
         'header': '85px',

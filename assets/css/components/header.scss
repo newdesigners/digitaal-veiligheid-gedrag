@@ -17,6 +17,10 @@
 
             &-item {
                 @apply pb-20 lg:pb-0 lg:pr-20 xl:pr-40;
+
+                &:last-of-type {
+                    @apply pr-0;
+                }
             }
         }
 
