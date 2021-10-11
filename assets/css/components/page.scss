@@ -1,5 +1,5 @@
 .page {
-    @apply pt-header;
+    @apply pt-header lg:pt-header-lg;
 
     &__content { 
         @apply bg-white;

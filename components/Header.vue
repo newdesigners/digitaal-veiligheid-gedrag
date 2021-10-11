@@ -11,16 +11,17 @@
             </li>
           </ul>
         </div>
-        <tasty-burger-button
-          class="header__nav-button"
-          ref="hamburger"
-          type="spin"
-          :active="isActive"
-          :color="color"
-          :active-color="activeColor"
-          :size="size"
-          @toggle="onToggle"
-          />
+        <aside class="header__nav-button">
+          <tasty-burger-button
+            ref="hamburger"
+            type="spin"
+            :active="isActive"
+            :color="color"
+            :active-color="activeColor"
+            :size="size"
+            @toggle="onToggle"
+            />
+        </aside>
       </div>
   </header>
 </template>

@@ -109,8 +109,12 @@ module.exports = {
 
         'sub': ['12px', { lineHeight: '18px'}],
       },
+      width: {
+        'initial': 'initial',
+      },
       height: {
         'header': '85px',
+        'header-lg': '163px',
       },
       maxHeight: {
         'header': '85px',
