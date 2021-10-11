@@ -23,7 +23,7 @@
   }
 
   body {
-    @apply relative text-body lg:text-body-lg text-primary font-normal;
+    @apply relative text-body bg-primary lg:text-body-lg text-primary font-normal;
     min-height: -webkit-fill-available;
   }
 

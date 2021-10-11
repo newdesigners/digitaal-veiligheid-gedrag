@@ -70,6 +70,7 @@ module.exports = {
           light: '#3B4559',
         },
         //Abstract
+        green: '#9EA620',
         gray:'#F2F2F2',
         blue: '#00B2CD',
       },
@@ -105,7 +106,27 @@ module.exports = {
 
         'h4': ['18px', { lineHeight: '27px'}],
         'h4-lg': ['20px', { lineHeight: '30px'}],
+
+        'h5': ['14px', { lineHeight: '21px'}],
+        
+        'sub': ['12px', { lineHeight: '18px'}],
       },
-    }
+      width: {
+        'initial': 'initial',
+        'hhs-logo': '95px',
+      },
+      height: {
+        'header': '85px',
+        'header-lg': '163px',
+      },
+      maxHeight: {
+        'header': '85px',
+      },
+    },
+    variants: {
+      extend: {
+        container: [],
+      },
+    },
   }
 }
