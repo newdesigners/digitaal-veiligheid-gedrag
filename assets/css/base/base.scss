@@ -14,6 +14,10 @@
     }
   }
 
+  svg {
+    height: auto;
+  }
+
   *::selection {
   }
 
@@ -27,13 +31,19 @@
     min-height: -webkit-fill-available;
   }
 
+  p {
+    @apply break-words;
+    hyphens: auto;
+  }
+
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    @apply font-poppins font-bold;
+    @apply font-poppins font-bold break-words;
+    hyphens: auto;
   }
 
   h1 {

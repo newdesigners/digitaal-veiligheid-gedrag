@@ -44,13 +44,20 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxt/image'
+    '@nuxt/image',
+    [
+      'storyblok-nuxt',
+      {
+        accessToken: process.env.STORYBLOK_SPACE_TOKEN,
+        cacheProvider: 'memory'
+      }
+    ],
   ],
   
   // Options for @nuxtjs/google-fonts
   googleFonts: {
     families: {
-      Roboto: [400, 500,],
+      Roboto: [400, 500],
       Poppins: [600, 700, 900],
     },
     display: 'swap',

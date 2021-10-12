@@ -6,7 +6,7 @@
                     <Logo />
                 </NuxtLink>
             <div class="footer__nav">
-                <ul class="footer__nav-list" @click="onClose">
+                <ul class="footer__nav-list">
                     <li v-for="item in mainRoutes" :key="item.text" class="footer__nav-list-item">
                         <NuxtLink :to="item.link" class="footer__nav-link">{{ item.text }}</NuxtLink>
                     </li>
