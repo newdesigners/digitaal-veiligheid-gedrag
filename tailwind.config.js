@@ -138,5 +138,8 @@ module.exports = {
         container: [],
       },
     },
+    plugins: [
+      require('@tailwindcss/typography'),
+    ],
   }
 }

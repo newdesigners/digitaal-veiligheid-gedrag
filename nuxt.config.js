@@ -29,6 +29,8 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/vue-tasty-burgers.js', mode: 'client' },
+    '~/plugins/vue-composition-api.js',
+    '~/plugins/storyblok-rich-text-renderer.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -62,6 +64,11 @@ export default {
     },
     display: 'swap',
     useStylesheet: true,
+  },
+  image: {
+    storyblok: {
+      baseURL: 'https://img2.storyblok.com'
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
