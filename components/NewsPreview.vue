@@ -7,10 +7,12 @@
       <h2 class="news-preview__title">{{ blok.title }}</h2>
       <div class="news-preview__posts">
         <ul class="news-preview__list">
-          <li class="news-preview__list-item" v-for="singleNews in selectedNews" :key="singleNews._uid">
-            <!-- <pre>{{ singleNews }}</pre> -->
-            <Card v-if="singleNews.content" :link="singleNews.full_slug" :content="singleNews.content" /> 
-          </li>
+          <VueSlickCarousel :arrows="true" :dots="true" :centerMode="true">
+            <li class="news-preview__list-item" v-for="singleNews in selectedNews" :key="singleNews._uid">
+              <!-- <pre>{{ singleNews }}</pre> -->
+              <Card v-if="singleNews.content" :link="singleNews.full_slug" :content="singleNews.content" /> 
+            </li>
+          </VueSlickCarousel>
         </ul>
       </div>
     </article>

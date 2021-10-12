@@ -1,3 +1,17 @@
 .card {
+  @apply inline-block;
   
+  max-width: 240px;
+
+  &__figure {
+    @apply pb-20;
+  }
+
+  &__title {
+    @apply text-h3 pb-10 lg:text-h3-lg;
+  }
+
+  &__excerpt {
+    @apply pb-20;
+  }
 }

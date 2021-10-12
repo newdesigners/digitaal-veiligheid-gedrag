@@ -1,7 +1,20 @@
 <template>
   <NuxtLink :to="link" class="card">
-    <h3 class="pt-2 pb-4 text-2xl font-bold"> {{ content.title }}</h3>
-    <p class="pb-6 leading-relaxed">{{ content.excerpt }}</p>
+    <!-- <pre>{{ content.featured_image }}</pre> -->
+    <figure class="card__figure">
+      <NuxtImg
+        v-if="content.featured_image"
+        class="post-preview__image"
+        width="240"
+        height="250"
+        :modifiers="{ smart: true }"
+        provider="storyblok"
+        :src="content.featured_image.filename"
+        :alt="content.featured_image.alt"
+      />
+    </figure>
+    <h3 class="card__title">{{ content.title }}</h3>
+    <p class="card__excerpt" v-snip:js="5">{{ content.excerpt }}</p>
   </NuxtLink>
 </template>
  
