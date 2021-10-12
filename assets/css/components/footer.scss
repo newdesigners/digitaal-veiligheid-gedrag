@@ -1,63 +1,59 @@
 .footer {
-    &__container {
-        
-    }
+	&__content {
+		@apply bg-primary-light lg:flex lg:justify-between lg:items-center;
+	}
 
-    &__content {
-        @apply bg-primary-light lg:flex lg:justify-between lg:items-center;
-    }
+	&__link {
+		&--logo {
+			@apply block py-20 lg:py-30;
+		}
+	}
 
-    &__link {
-        &--logo {
-            @apply block py-20 lg:py-30;
-        }
-    }
+	&__nav {
+		@apply lg:inline-flex;
 
-    &__nav {
-        @apply lg:inline-flex;
-        
-        &-list {
-            @apply lg:flex;
+		&-list {
+			@apply lg:flex;
 
-            &-item {
-               @apply pb-10 lg:pr-20 lg:pb-0;
+			&-item {
+				@apply pb-10 lg:pr-20 lg:pb-0;
 
-                &:last-of-type {
-                    @apply pb-20 lg:pr-0 lg:pb-0;
-                }
-            }
-        }
+				&:last-of-type {
+					@apply pb-20 lg:pr-0 lg:pb-0;
+				}
+			}
+		}
 
-        &-link {
-            @apply text-white font-poppins font-semibold text-h5 hover:text-blue;
+		&-link {
+			@apply text-white font-poppins font-semibold text-h5 hover:text-blue;
 
-            &.nuxt-link-exact-active, &.nuxt-link-active[href]:not([href="/"]) {
-                @apply text-blue;
-            }
-        }
-    }
+			&.nuxt-link-exact-active, &.nuxt-link-active[href]:not([href="/"]) {
+				@apply text-blue;
+			}
+		}
+	}
 
-    &__legal {
-        @apply bg-white py-6 flex justify-between items-center;
-        
-        &-content {
-            @apply inline-flex;
-        }
+	&__legal {
+		@apply bg-white py-6 flex justify-between items-center;
 
-        &-logo {
-            @apply w-hhs-logo;
-        }
+		&-content {
+				@apply inline-flex;
+		}
 
-        &-link {
-            @apply underline text-sub hover:text-blue;
-            
-            &:first-of-type {
-                @apply pr-10;
-            }
+		&-logo {
+				@apply w-hhs-logo;
+		}
 
-            &.nuxt-link-exact-active {
-                @apply text-blue;
-            }
-        }
-    }
+		&-link {
+			@apply underline text-sub hover:text-blue;
+
+			&:first-of-type {
+				@apply pr-10;
+			}
+
+			&.nuxt-link-exact-active {
+				@apply text-blue;
+			}
+		}
+	}
 }

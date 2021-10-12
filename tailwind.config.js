@@ -68,6 +68,7 @@ module.exports = {
         primary: {
           DEFAULT: '#223343',
           light: '#3B4559',
+          gradient: '#233343',
         },
         //Abstract
         green: '#9EA620',
@@ -114,10 +115,19 @@ module.exports = {
       width: {
         'initial': 'initial',
         'hhs-logo': '95px',
+        'icon': '12px',
+      },
+      maxWidth: {
+        'text': '690px',
       },
       height: {
         'header': '85px',
         'header-lg': '163px',
+      },
+      minHeight: {
+        'page-intro-section': '530px',
+        'page-intro-section-md': '440px',
+        'page-intro-section-lg': '600px',
       },
       maxHeight: {
         'header': '85px',
