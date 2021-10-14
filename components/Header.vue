@@ -20,7 +20,7 @@
             :active-color="activeColor"
             :size="size"
             @toggle="onToggle"
-            />
+          />
         </aside>
       </div>
   </header>
@@ -46,13 +46,13 @@ export default {
   },
   computed: {
     mainRoutes() {
-        return [
-          { link: "/onderzoek", text: "Het onderzoek" },
-          { link: "/lesactiviteiten", text: "Lesactiviteiten" },
-          { link: "/doe-de-test", text: "Doe de test" },
-          { link: "/ervaringen", text: "Ervaringen" },
-          { link: "/contact", text: "Contact" },
-        ]
+      return [
+        { link: "/onderzoek", text: "Het onderzoek" },
+        { link: "/lesactiviteiten", text: "Lesactiviteiten" },
+        { link: "/doe-de-test", text: "Doe de test" },
+        { link: "/ervaringen", text: "Ervaringen" },
+        { link: "/contact", text: "Contact" },
+      ];
     },
   },
 };
