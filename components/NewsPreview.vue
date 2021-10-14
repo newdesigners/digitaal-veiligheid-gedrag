@@ -7,12 +7,14 @@
       <h2 class="news-preview__title">{{ blok.title }}</h2>
       <div class="news-preview__posts">
         <ul class="news-preview__list">
-          <VueSlickCarousel :arrows="true" :dots="true" :centerMode="true">
+          <VueSlickCarousel v-bind="slickOptions">
             <li class="news-preview__list-item" v-for="singleNews in selectedNews" :key="singleNews._uid">
-              <!-- <pre>{{ singleNews }}</pre> -->
               <Card v-if="singleNews.content" :link="singleNews.full_slug" :content="singleNews.content" /> 
             </li>
           </VueSlickCarousel>
+            <!-- <li class="news-preview__list-item" v-for="singleNews in selectedNews" :key="singleNews._uid">
+              <Card v-if="singleNews.content" :link="singleNews.full_slug" :content="singleNews.content" /> 
+            </li> -->
         </ul>
       </div>
     </article>
@@ -21,6 +23,28 @@
  
 <script>
 export default {
+  data() {
+    return {
+      slickOptions: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: false,
+        arrows: false,
+        dots: false,
+        variableWidth: true,
+        responsive: [
+          {
+            breakpoint: 767,
+            settings: 'slick',
+          },
+          {
+            breakpoint: 9999,
+            settings: 'unslick'
+          },
+        ],
+      },
+    }
+  },
   props: {
     blok: {
       type: Object,
