@@ -1,13 +1,26 @@
 .news-preview {
-  @apply pt-60 lg:pt-120;
+  @apply pt-60 lg:pt-120 pb-70 lg:pb-120;
+
+  &__article {
+    @apply pr-0 md:px-container;
+  }
 
   &__title {
     @apply text-green text-h2 lg:text-h2-lg pb-30 lg:pb-20;
   }
 
   &__list {
-    &-item {
-      @apply pr-10;
+
+    & .slider {
+      @apply flex flex-wrap xl:justify-between;
     }
+
+    &-item {
+      @apply pr-10 md:pr-40 xl:pr-0;
+    }
+  }
+
+  &__link {
+    @apply inline-flex xl:block xl:text-right;
   }
 }

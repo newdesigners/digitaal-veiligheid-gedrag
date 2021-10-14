@@ -116,13 +116,20 @@ module.exports = {
         'initial': 'initial',
         'hhs-logo': '95px',
         'icon': '12px',
+        'card-figure': '240px',
+        'card-figure-lg': '374px',
+
       },
       maxWidth: {
         'text': '690px',
+        'card': '240px',
+        'card-lg': '374px',
       },
       height: {
         'header': '85px',
         'header-lg': '163px',
+        'card-figure': '250px',
+        'card-figure-lg': '320px',
       },
       minHeight: {
         'page-intro-section': '530px',

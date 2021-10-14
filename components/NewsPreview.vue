@@ -3,7 +3,7 @@
     v-editable="blok"
     class="news-preview"
   >
-    <article class="container news-preview__article">
+    <article class="container container--inner news-preview__article">
       <h2 class="news-preview__title">{{ blok.title }}</h2>
       <div class="news-preview__posts">
         <ul class="news-preview__list">
@@ -12,11 +12,9 @@
               <Card v-if="singleNews.content" :link="singleNews.full_slug" :content="singleNews.content" /> 
             </li>
           </VueSlickCarousel>
-            <!-- <li class="news-preview__list-item" v-for="singleNews in selectedNews" :key="singleNews._uid">
-              <Card v-if="singleNews.content" :link="singleNews.full_slug" :content="singleNews.content" /> 
-            </li> -->
         </ul>
       </div>
+      <Link class="news-preview__link" :label="blok.link_label" :link="blok.link_url" />
     </article>
   </section>
 </template>

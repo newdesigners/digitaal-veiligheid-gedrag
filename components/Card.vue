@@ -4,9 +4,11 @@
     <figure class="card__figure">
       <NuxtImg
         v-if="content.featured_image"
-        class="post-preview__image"
+        class="card__image"
+        format="webp"
         width="240"
         height="250"
+        sizes="lg:374px"
         :modifiers="{ smart: true }"
         provider="storyblok"
         :src="content.featured_image.filename"
