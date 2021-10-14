@@ -1,21 +1,16 @@
 <template>
   <section class="page container">
     <div class="page__content">
-      <component
-        v-if="story.content.component"
-        :key="story.content._uid"
-        :blok="story.content"
-        :is="story.content.component"
-      />
+      <Post :blok="story.content" />
     </div>
   </section>
 </template>
- 
+
 <script>
 export default {
   data () {
     return {
-      story: { content: {} },
+      story: { content: {} }
     }
   },
   mounted () {
@@ -41,13 +36,11 @@ export default {
     })
   },
   asyncData (context) {
-    // // This what would we do in real project
-    // const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
-    // const fullSlug = (context.route.path == '/' || context.route.path == '') ? 'home' : context.route.path
+    // Load the JSON from the API
+    let version = context.query._storyblok || context.isDev ? 'draft' : 'published';
  
-    // Load the JSON from the API - loadig the home content (index page)
-    return context.app.$storyapi.get('cdn/stories/home', {
-      version: 'draft'
+    return context.app.$storyapi.get(`cdn/stories/nieuws/${ context.params.slug }`, {
+      version: version
     }).then((res) => {
       return res.data
     }).catch((res) => {
@@ -60,16 +53,5 @@ export default {
       }
     })
   },
-  async fetch(context) {
-    // TODO: Change version according to the environment;
-    // let version = context.query._storyblok || context.isDev ? 'draft' : 'published';
-    // Loading reference data - News in our case
-    if(context.store.state.news.loaded !== '1') {
-      let newsRefRes = await context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'nieuws/', version: 'draft' });
-
-      context.store.commit('news/setNews', newsRefRes.data.stories);
-      context.store.commit('news/setLoaded', '1');
-    }
-  },
-}
+};
 </script>

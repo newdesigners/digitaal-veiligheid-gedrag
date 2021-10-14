@@ -9,7 +9,7 @@ export default {
   head: {
     title: 'digitaal-veilig-gedrag',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'nl-Nl'
     },
     meta: [
       { charset: 'utf-8' },
@@ -29,6 +29,10 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/vue-tasty-burgers.js', mode: 'client' },
+    { src: '~/plugins/vue-slick-carousel.js' },
+    { src: '~/plugins/vue-composition-api.js' },
+    { src: '~/plugins/storyblok-rich-text-renderer.js' },
+    { src: '~/plugins/vue-snip.js' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -62,6 +66,11 @@ export default {
     },
     display: 'swap',
     useStylesheet: true,
+  },
+  image: {
+    storyblok: {
+      baseURL: 'https://img2.storyblok.com'
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

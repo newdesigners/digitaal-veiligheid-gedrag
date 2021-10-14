@@ -1,0 +1,19 @@
+.card {
+  @apply inline-block max-w-card lg:max-w-card-lg;
+
+  &__figure {
+    @apply w-card-figure lg:w-card-figure-lg h-card-figure lg:h-card-figure-lg pb-20;
+  }
+
+  &__image {
+    @apply w-full h-full object-cover;
+  }
+
+  &__title {
+    @apply text-h3 pb-10 lg:text-h3-lg;
+  }
+
+  &__excerpt {
+    @apply pb-20 pr-12 lg:text-body-md lg:pb-30;
+  }
+}
