@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="link" class="card">
+  <NuxtLink :to="`/${ link }`" class="card">
     <!-- <pre>{{ content.featured_image }}</pre> -->
     <figure class="card__figure">
       <NuxtImg

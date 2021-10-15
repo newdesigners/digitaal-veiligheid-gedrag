@@ -1,10 +1,6 @@
 .page-intro {
   @apply min-h-page-intro-section bg-center bg-no-repeat bg-cover md:min-h-page-intro-section-md lg:min-h-page-intro-section-lg lg:pb-20;
 
-  &__article {
-    @apply lg:px-40;
-  }
-
   &__title {
     @apply max-w-text font-black text-h1-intro lg:text-h1-intro-lg text-white pt-30 pb-10 md:pt-110;
   }

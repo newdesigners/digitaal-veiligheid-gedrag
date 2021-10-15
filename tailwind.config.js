@@ -54,13 +54,10 @@ module.exports = {
       '1rem': '1rem',
       'header': "theme(height.header)",
       'header-lg': "theme(height.header-lg)",
-      'container': "theme(container.padding)",
+      'container': "theme(container.padding.DEFAULT)",
+      'container-xl': "theme(container.padding.xl)",
     },
     extend: {
-      container: {
-        padding: '20px',
-        center: true,
-      },
       colors: {
         //Base
         transparent: 'transparent',
@@ -107,8 +104,10 @@ module.exports = {
 
         'h4': ['18px', { lineHeight: '27px'}],
         'h4-lg': ['20px', { lineHeight: '30px'}],
+        'h4-post-xl': '1.3em',
 
         'h5': ['14px', { lineHeight: '21px'}],
+        'h5-post-xl': '1.1em',
         
         'sub': ['12px', { lineHeight: '18px'}],
       },
@@ -130,6 +129,8 @@ module.exports = {
         'header-lg': '163px',
         'card-figure': '250px',
         'card-figure-lg': '320px',
+        'post-figure-md': '288px',
+        'post-figure-lg': '450px',
       },
       minHeight: {
         'page-intro-section': '530px',
@@ -140,13 +141,20 @@ module.exports = {
         'header': '85px',
       },
     },
-    variants: {
-      extend: {
-        container: [],
+    container: {
+      padding: {
+        DEFAULT: '20px',
+        xl: '30px',
       },
+      center: true,
     },
-    plugins: [
-      require('@tailwindcss/typography'),
-    ],
-  }
+  },
+  variants: {
+    extend: {
+      container: [],
+    },
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

@@ -2,7 +2,7 @@
   @apply pt-60 lg:pt-120 pb-70 lg:pb-120;
 
   &__article {
-    @apply pr-0 md:px-container;
+    @apply pr-0 md:px-container xl:px-container-xl;
   }
 
   &__title {
@@ -10,7 +10,6 @@
   }
 
   &__list {
-
     & .slider {
       @apply flex flex-wrap xl:justify-between;
     }

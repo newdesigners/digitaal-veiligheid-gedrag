@@ -1,7 +1,7 @@
 <template>
   <section class="page container">
     <div class="page__content">
-      <Post :blok="story.content" />
+      <Post :blok="story" />
     </div>
   </section>
 </template>
@@ -10,12 +10,12 @@
 export default {
   data () {
     return {
-      story: { content: {} }
-    }
+      story: { content: {} },
+    };
   },
   mounted () {
     this.$storybridge(() => {
-      const storyblokInstance = new StoryblokBridge()
+      const storyblokInstance = new StoryblokBridge();
  
       // Use the input event for instant update of content
       storyblokInstance.on('input', (event) => {
@@ -23,7 +23,7 @@ export default {
         if (event.story.id === this.story.id) {
           this.story.content = event.story.content;
         }
-      })
+      });
  
       // Use the bridge to listen the events
       storyblokInstance.on(['published', 'change'], (event) => {
@@ -32,8 +32,8 @@ export default {
           path: this.$nuxt.$router.currentRoute,
           force: true,
         })
-      })
-    })
+      });
+    });
   },
   asyncData (context) {
     // Load the JSON from the API
@@ -46,12 +46,23 @@ export default {
     }).catch((res) => {
       if (!res.response) {
         console.error(res);
-        context.error({ statusCode: 404, message: 'Failed to receive content form api' })
+        context.error({ statusCode: 404, message: 'Failed to receive content form api' });
       } else {
         console.error(res.response.data);
-        context.error({ statusCode: res.response.status, message: res.response.data })
+        context.error({ statusCode: res.response.status, message: res.response.data });
       }
-    })
+    });
+  },
+  async fetch(context) {
+    // TODO: Change version according to the environment;
+    let version = context.query._storyblok || context.isDev ? 'draft' : 'published';
+    // Loading reference data - News in our case
+    if(context.store.state.news.loaded !== '1') {
+      let newsRefRes = await context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'nieuws/', version: version });
+
+      context.store.commit('news/setNews', newsRefRes.data.stories);
+      context.store.commit('news/setLoaded', '1');
+    }
   },
 };
 </script>

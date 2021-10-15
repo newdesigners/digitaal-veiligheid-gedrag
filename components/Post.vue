@@ -1,26 +1,34 @@
 <template>
-  <article class="post">
-    <pre>{{ blok }}</pre>
-    <div class="container post__intro">
-      <h1 class="post__title">{{ blok.title }}</h1>
+  <article class="container container--inner post">
+    <!-- <pre>{{ blok }}</pre> -->
+    <div class="post__intro">
+      <h1 class="post__title">{{ post.title }}</h1>
     </div>
-    <figure class="container post__figure">
-      <NuxtImg
-        v-if="blok.featured_image.filename"  
+    <figure class="post__figure">
+      <NuxtPicture
+        v-if="post.featured_image.filename"  
         class="post__image"
-        width="1200"
-        height="450"
+        width="280"
+        height="175"
+        sizes="sm:280px md:688px lg:944px xl:1200px"
+        format="webp"
+        :modifiers="{ smart: true }"
         provider="storyblok"
         loading="lazy"
-        :src="blok.featured_image.filename"
-        :alt="blok.featured_image.alt"
+        :src="post.featured_image.filename"
+        :alt="post.featured_image.alt"
       />
     </figure>
-    <div class="container prose lg:prose-lg xl:prose-xl post__content post__body">
-      <rich-text-renderer class="rich-text-renderer" v-if="blok.body" :document="blok.body" />
+    <div class="container prose lg:prose-lg xl:prose-xl rich-text-renderer post__body">
+      <rich-text-renderer class="rich-text-renderer" v-if="post.body" :document="post.body" />
     </div>
-    <aside class="container post__read-more">
+    <aside class="post__read-more">
       <h2 class="post__read-more-title">Lees ook</h2>
+      <ul class="post__read-more-list">
+        <li class="post__read-more-list-item" v-for="p in readMorePosts" :key="p.uuid">
+          <Card v-if="p.content" :link="p.full_slug" :content="p.content" /> 
+        </li>
+      </ul>
     </aside>
   </article>
 </template>
@@ -32,6 +40,16 @@ export default {
       type: Object,
       required: true,
     }
+  },
+  computed: {
+    post() {
+      return this.blok.content;
+    },
+    readMorePosts() {
+      return this.$store.state.news.news.filter((p) => {
+        return p.uuid !== this.blok.uuid && p.full_slug !== 'nieuws/';
+      }).slice(0, 3);
+    },
   },
 };
 </script>
