@@ -1,0 +1,27 @@
+.rich-text-renderer {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-primary;
+  }
+
+  h4 {
+    @apply xl:text-h4-post-xl;
+  }
+
+  h5 {
+    @apply xl:text-h5-post-xl;
+  }
+
+  p {
+    @apply font-roboto;
+
+    a {
+      @apply text-blue underline;
+    }
+  }
+
+  blockquote {
+    p {
+      @apply text-primary-light font-poppins;
+    }
+  }
+}

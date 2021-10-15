@@ -1,6 +1,6 @@
 <template>
   <article class="post">
-    <pre>{{ blok }}</pre>
+    <!-- <pre>{{ blok }}</pre> -->
     <div class="container post__intro">
       <h1 class="post__title">{{ blok.title }}</h1>
     </div>
@@ -16,7 +16,7 @@
         :alt="blok.featured_image.alt"
       />
     </figure>
-    <div class="container prose lg:prose-lg xl:prose-xl post__content post__body">
+    <div class="container prose lg:prose-lg xl:prose-xl rich-text-renderer post__body">
       <rich-text-renderer class="rich-text-renderer" v-if="blok.body" :document="blok.body" />
     </div>
     <aside class="container post__read-more">

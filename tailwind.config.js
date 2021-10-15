@@ -107,8 +107,10 @@ module.exports = {
 
         'h4': ['18px', { lineHeight: '27px'}],
         'h4-lg': ['20px', { lineHeight: '30px'}],
+        'h4-post-xl': '1.3em',
 
         'h5': ['14px', { lineHeight: '21px'}],
+        'h5-post-xl': '1.1em',
         
         'sub': ['12px', { lineHeight: '18px'}],
       },
@@ -140,13 +142,13 @@ module.exports = {
         'header': '85px',
       },
     },
-    variants: {
-      extend: {
-        container: [],
-      },
+  },
+  variants: {
+    extend: {
+      container: [],
     },
-    plugins: [
-      require('@tailwindcss/typography'),
-    ],
-  }
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
