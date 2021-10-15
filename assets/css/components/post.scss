@@ -8,7 +8,7 @@
   }
 
   &__image {
-      @apply block md:h-post-figure-md lg:h-post-figure-lg;
+    @apply block md:h-post-figure-md lg:h-post-figure-lg;
 
     img {
       @apply w-full h-full object-cover;
