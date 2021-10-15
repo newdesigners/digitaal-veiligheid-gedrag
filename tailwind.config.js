@@ -54,13 +54,10 @@ module.exports = {
       '1rem': '1rem',
       'header': "theme(height.header)",
       'header-lg': "theme(height.header-lg)",
-      'container': "theme(container.padding)",
+      'container': "theme(container.padding.DEFAULT)",
+      'container-xl': "theme(container.padding.xl)",
     },
     extend: {
-      container: {
-        padding: '20px',
-        center: true,
-      },
       colors: {
         //Base
         transparent: 'transparent',
@@ -132,6 +129,8 @@ module.exports = {
         'header-lg': '163px',
         'card-figure': '250px',
         'card-figure-lg': '320px',
+        'post-figure-md': '288px',
+        'post-figure-lg': '450px',
       },
       minHeight: {
         'page-intro-section': '530px',
@@ -141,6 +140,13 @@ module.exports = {
       maxHeight: {
         'header': '85px',
       },
+    },
+    container: {
+      padding: {
+        DEFAULT: '20px',
+        xl: '40px',
+      },
+      center: true,
     },
   },
   variants: {

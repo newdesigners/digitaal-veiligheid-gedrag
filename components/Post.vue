@@ -5,11 +5,14 @@
       <h1 class="post__title">{{ blok.title }}</h1>
     </div>
     <figure class="container post__figure">
-      <NuxtImg
+      <NuxtPicture
         v-if="blok.featured_image.filename"  
         class="post__image"
-        width="1200"
-        height="450"
+        width="280"
+        height="175"
+        sizes="sm:280px md:688px lg:944px xl:1200px"
+        format="webp"
+        :modifiers="{ smart: true }"
         provider="storyblok"
         loading="lazy"
         :src="blok.featured_image.filename"

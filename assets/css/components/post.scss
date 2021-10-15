@@ -1,3 +1,26 @@
 .post {
-  
+  &__title {
+    @apply pb-20 pt-30 lg:pt-80 lg:pb-40 text-green;
+  }
+
+  &__figure {
+    @apply pb-20 lg:pb-40 w-full;
+  }
+
+  &__image {
+      @apply block md:h-post-figure-md lg:h-post-figure-lg;
+
+    img {
+      @apply w-full h-full object-cover;
+    }
+  }
+
+  &__body {
+    @apply pb-40 lg:pb-80;
+  }
+
+  &__read-more-title {
+    @apply pb-20 lg:pb-40;
+  }
+
 }
