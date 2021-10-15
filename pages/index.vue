@@ -42,12 +42,11 @@ export default {
   },
   asyncData (context) {
     // // This what would we do in real project
-    // const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
-    // const fullSlug = (context.route.path == '/' || context.route.path == '') ? 'home' : context.route.path
- 
+    const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
+    const fullSlug = (context.route.path == '/' || context.route.path == '') ? 'home' : context.route.path
     // Load the JSON from the API - loadig the home content (index page)
     return context.app.$storyapi.get('cdn/stories/home', {
-      version: 'draft'
+      version: version
     }).then((res) => {
       return res.data
     }).catch((res) => {
@@ -62,10 +61,10 @@ export default {
   },
   async fetch(context) {
     // TODO: Change version according to the environment;
-    // let version = context.query._storyblok || context.isDev ? 'draft' : 'published';
+    let version = context.query._storyblok || context.isDev ? 'draft' : 'published';
     // Loading reference data - News in our case
     if(context.store.state.news.loaded !== '1') {
-      let newsRefRes = await context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'nieuws/', version: 'draft' });
+      let newsRefRes = await context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'nieuws/', version: version });
 
       context.store.commit('news/setNews', newsRefRes.data.stories);
       context.store.commit('news/setLoaded', '1');

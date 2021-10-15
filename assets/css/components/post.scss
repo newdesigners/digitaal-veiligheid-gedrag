@@ -19,8 +19,25 @@
     @apply pb-40 lg:pb-80;
   }
 
-  &__read-more-title {
-    @apply pb-20 lg:pb-40;
-  }
+  &__read-more {
+    &-title {
+      @apply pb-20 lg:pb-40;
+    }
 
+    &-list {
+      @apply pb-80 md:flex md:flex-wrap xl:justify-between lg:pb-100;
+
+      &-item {
+        @apply pb-20 xl:pb-0 md:pr-40 xl:pr-0;
+      } 
+    }
+
+    .card{
+      @apply max-w-none md:max-w-card lg:max-w-card-lg;
+
+      &__figure {
+        @apply w-full;
+      }
+    }
+  }
 }

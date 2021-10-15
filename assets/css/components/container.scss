@@ -1,5 +1,5 @@
 .container {
   &--inner {
-    @apply px-10 md:px-container;
+    @apply px-10 md:px-container xl:px-container-xl;
   }
 }

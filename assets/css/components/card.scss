@@ -10,10 +10,10 @@
   }
 
   &__title {
-    @apply text-h3 pb-10 lg:text-h3-lg;
+    @apply text-h3 pb-10 md:px-10 lg:px-20 lg:text-h3-lg;
   }
 
   &__excerpt {
-    @apply pb-20 pr-12 lg:text-body-md lg:pb-30;
+    @apply pb-20 pr-12 md:pl-10 lg:px-20 lg:text-body-md lg:pb-30;
   }
 }
