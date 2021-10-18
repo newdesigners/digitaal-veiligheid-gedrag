@@ -1,0 +1,31 @@
+.text-image {
+  &__article {
+  
+  }
+
+  &__copy {
+    .h-group {
+      &__pre-title {
+        @apply font-poppins font-semibold text-h5 lg:text-body text-blue;
+      }
+
+      &__title {
+        @apply text-green pb-10 lg:pb-20;
+      }
+    }
+
+    .text-content {
+      &__title {
+        @apply pb-10;
+      }
+
+      &__body {
+        @apply text-body-md lg:text-body-lg pb-20 lg:pb-30;
+      }
+    }
+
+    .link-content {
+      @apply pb-20 lg:pb-30;
+    }
+  }
+}

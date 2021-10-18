@@ -1,10 +1,9 @@
 <template>
   <div v-editable="blok">
-    <component
-      v-for="blok in blok.body"
-      :key="blok._uid"
-      :blok="blok"
-      :is="blok.component"
+    <Link
+      class="link-content"
+      :label="blok.link_label"
+      :link="blok.link_url"
     />
   </div>
 </template>
@@ -14,8 +13,8 @@ export default {
   props: {
     blok: {
       type: Object,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };
 </script>
