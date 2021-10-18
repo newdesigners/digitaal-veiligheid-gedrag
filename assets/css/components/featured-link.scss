@@ -1,0 +1,7 @@
+.featured-link {
+  @apply bg-gray p-10 pt-15 rounded mb-20 lg:mb-30;
+
+  &__title {
+    @apply text-h4 lg:text-h4-lg font-poppins font-bold pb-12 lg:pb-0;
+  }
+}

@@ -22,6 +22,7 @@ module.exports = {
       9: "9px",
       10: "10px",
       12: "12px",
+      13: "13px",
       15: "15px",
       16: "16px",
       18: "18px",
@@ -115,6 +116,7 @@ module.exports = {
         'initial': 'initial',
         'hhs-logo': '95px',
         'icon': '12px',
+        'icon-lg': '22px',
         'card-figure': '240px',
         'card-figure-lg': '374px',
 
