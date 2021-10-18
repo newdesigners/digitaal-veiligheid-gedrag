@@ -23,7 +23,7 @@ export default {
   },
   computed: {
     escapedUrl() {
-      return this.url.replace(/&amp;/g, "&");
+      return this.url.replace(/&/g, "&amp;");
     }
   }
 };
