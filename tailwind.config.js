@@ -119,7 +119,8 @@ module.exports = {
         'icon-lg': '22px',
         'card-figure': '240px',
         'card-figure-lg': '374px',
-
+        'slanted-image': '250px',
+        'slanted-image-lg': '580px',
       },
       maxWidth: {
         'text': '690px',

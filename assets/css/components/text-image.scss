@@ -28,4 +28,30 @@
       @apply pb-20 lg:pb-30;
     }
   }
+
+  &__image {
+    @apply relative;
+  }
+
+  &__figure {
+    @apply relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      display: block;
+      right: 8rem;
+      top: 4rem;
+      bottom: 16rem;
+      left: -100%;
+      background: #f7f7f7;
+      content: '';
+      /* @apply block absolute -left-full -right-full bg-gray bottom-10;*/
+    }
+  }
+
+  &__src {
+    @apply w-slanted-image;
+  }
 }
