@@ -1,10 +1,24 @@
 .text-image {
   &__article {
-    @apply pb-60 lg:pb-120;
+    @apply pb-60 sm:pb-100 lg:pb-120 xl:pb-160;
   }
 
   &__content {
     @apply sm:flex sm:justify-between sm:items-center;
+
+    &--reverse {
+      @apply sm:flex-row-reverse;
+
+      .text-image {
+        &__figure {
+          @apply justify-start;
+
+          &::after {
+            @apply -left-full right-0 xl:right-40;
+          }
+        }
+      }
+    }
   }
 
   &__copy {
