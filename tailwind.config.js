@@ -22,6 +22,7 @@ module.exports = {
       9: "9px",
       10: "10px",
       12: "12px",
+      13: "13px",
       15: "15px",
       16: "16px",
       18: "18px",
@@ -56,6 +57,7 @@ module.exports = {
       'header-lg': "theme(height.header-lg)",
       'container': "theme(container.padding.DEFAULT)",
       'container-xl': "theme(container.padding.xl)",
+      '48%': '48%',
     },
     extend: {
       colors: {
@@ -115,14 +117,24 @@ module.exports = {
         'initial': 'initial',
         'hhs-logo': '95px',
         'icon': '12px',
+        'icon-lg': '22px',
         'card-figure': '240px',
         'card-figure-lg': '374px',
-
+        'slanted-image': '250px',
+        'slanted-image-md': '300px',
+        'slanted-image-lg': '420px',
+        'slanted-image-xl': '580px',
+        '46%': '46%',
+        '47%': '47%',
+        '48%': '48%',
+        '49%': '49%',
       },
       maxWidth: {
         'text': '690px',
         'card': '240px',
         'card-lg': '374px',
+        'text-image-copy': '470px',
+        'text-image-bg': '700px',
       },
       height: {
         'header': '85px',

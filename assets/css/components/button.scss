@@ -10,4 +10,11 @@
       @apply w-icon;
     }
   }
+
+  &--wide {
+    @apply w-full justify-between;
+    svg {
+      @apply w-icon-lg;
+    }
+  }
 }

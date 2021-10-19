@@ -1,8 +1,8 @@
 <svg width="580" height="560" viewBox="0 0 580 560" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <mask id="shape-mask">
-		<path d="M580 0L0 29L30 541L513 560L580 0Z" fill="#C4C4C4"/>
-        </mask>
-      </defs>
-           <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" href="https://images.unsplash.com/photo-1508186736123-44a5fcb36f9f?ixlib=rb-0.3.5&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ&amp;s=7ff4199971d35554c59bbf8e0b229534" mask="url(#shape-mask)"></image>
+  <defs>
+    <mask id="shape-mask">
+		  <path d="M580 0L0 29L30 541L513 560L580 0Z" fill="#C4C4C4"/>
+    </mask>
+  </defs>
+  <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" href="https://images.unsplash.com/photo-1508186736123-44a5fcb36f9f?ixlib=rb-0.3.5&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ&amp;s=7ff4199971d35554c59bbf8e0b229534" mask="url(#shape-mask)"></image>
 </svg>
