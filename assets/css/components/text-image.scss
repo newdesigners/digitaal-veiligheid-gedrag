@@ -1,9 +1,15 @@
 .text-image {
   &__article {
-  
+    @apply pb-60 lg:pb-120;
+  }
+
+  &__content {
+    @apply sm:flex sm:justify-between sm:items-center;
   }
 
   &__copy {
+    @apply sm:w-48% lg:max-w-text-image-copy 2xl:max-w-text-image-bg;
+
     .h-group {
       &__pre-title {
         @apply font-poppins font-semibold text-h5 lg:text-body text-blue;
@@ -11,7 +17,7 @@
 
       &__title {
         @apply text-green pb-10 lg:pb-20;
-      }
+      } 
     }
 
     .text-content {
@@ -27,31 +33,26 @@
     .link-content {
       @apply pb-20 lg:pb-30;
     }
+
+    .featured-link {
+      @apply max-w-text-image-copy;
+    }
   }
 
   &__image {
-    @apply relative;
+    @apply relative sm:w-48% lg:w-49% xl:flex-1 max-w-text-image-bg;
   }
 
   &__figure {
-    @apply relative;
+    @apply relative flex justify-end;
 
-    &:after {
+    &::after {
       content: "";
-      position: absolute;
-      z-index: -1;
-      display: block;
-      right: 8rem;
-      top: 4rem;
-      bottom: 16rem;
-      left: -100%;
-      background: #f7f7f7;
-      content: '';
-      /* @apply block absolute -left-full -right-full bg-gray bottom-10;*/
+      @apply block absolute -left-full -right-full -bottom-20 top-50 bg-gray z-10 sm:top-80 sm:left-0 sm:-bottom-90 md:-bottom-50 xl:left-40 xl:top-130 xl:-bottom-70;
     }
   }
 
   &__src {
-    @apply w-slanted-image;
+    @apply w-slanted-image relative z-20 md:w-slanted-image-md lg:w-slanted-image-lg xl:w-slanted-image-xl;
   }
 }

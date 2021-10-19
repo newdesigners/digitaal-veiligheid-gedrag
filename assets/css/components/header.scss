@@ -1,5 +1,5 @@
 .header {
-	@apply bg-primary h-header lg:h-header-lg fixed top-0 w-full overflow-hidden transition-all duration-500 ease-in-out lg:flex lg:items-center z-10;
+	@apply bg-primary h-header lg:h-header-lg fixed top-0 w-full overflow-hidden transition-all duration-500 ease-in-out lg:flex lg:items-center z-50;
 
 	&__container {
 		@apply flex flex-wrap justify-between my-20 lg:my-0 lg:items-center;
