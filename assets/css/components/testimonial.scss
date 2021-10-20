@@ -1,0 +1,19 @@
+.testimonial {
+  @apply max-w-testimonial py-20;
+
+  &__quote {
+    @apply text-body-md pb-10 lg:text-h3-lg lg:pb-20;
+
+    &-mark {
+      @apply text-h1-intro-lg leading-none;
+    }
+  }
+
+  &__name {
+    @apply font-poppins font-bold text-h5 lg:text-body;
+  }
+
+  &__title {
+    @apply text-h5 lg:text-body;
+  }
+}
