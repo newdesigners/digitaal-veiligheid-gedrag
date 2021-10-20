@@ -1,3 +1,41 @@
 .featured-experience {
   @apply bg-gray;
+
+  &__experiences {
+    @apply xl:max-w-testimonial-container mx-auto;
+  }
+
+  &__slider {
+    @apply py-10 lg:flex !important;
+
+    .slick-slide > div {
+      @apply xl:flex xl:justify-end;
+    }
+
+    .testimonial {
+      @apply xl:mr-90;
+    }
+
+    &-dots {
+      @apply bg-gray flex justify-end lg:justify-center lg:flex-col lg:pl-container !important;
+
+      li {
+        @apply inline-block pr-20 lg:pr-0 lg:pb-20;
+
+        &:last-of-type {
+          @apply pr-0 lg:pb-0;
+        }
+
+        &.slick-active {
+          .featured-experience__slider-dot {
+            @apply bg-blue;
+          }
+        }
+      }
+    }
+
+    &-dot {
+      @apply block w-slider-dot h-slider-dot bg-gray-light rounded-full;
+    }
+  }
 }

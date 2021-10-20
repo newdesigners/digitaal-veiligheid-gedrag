@@ -7,23 +7,23 @@
   <pre>{{ selectedExperiences }}</pre> -->
     <article class="container container--inner featured-experience__article">
       <div class="featured-experience__experiences">
-        <div class="featured-experience__list">
+        <VueSlickCarousel class="featured-experience__slider" ref="carousel" v-bind="slickOptions">
           <Testimonial
-            class="featured-experience__list-item"
             v-for="experience in selectedExperiences"
             :key="experience.uuid"
             :content="experience.content"
           />
-        </div>
+          <template #customPaging="page">
+            <div><span class="featured-experience__slider-dot"></span></div>
+          </template>
+        </VueSlickCarousel>
       </div>
     </article>
   </section>
 </template>
  
 <script>
-import Testimonial from './Testimonial.vue';
 export default {
-  components: { Testimonial },
   data() {
     return {
       slickOptions: {
@@ -31,17 +31,9 @@ export default {
         slidesToScroll: 1,
         infinite: false,
         arrows: false,
-        dots: false,
-        variableWidth: true,
+        dots: true,
+        dotsClass: 'featured-experience__slider-dots',
         responsive: [
-          {
-            breakpoint: 767,
-            settings: 'slick',
-          },
-          {
-            breakpoint: 9999,
-            settings: 'unslick'
-          },
         ],
       },
     }
