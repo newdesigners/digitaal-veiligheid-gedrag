@@ -71,7 +71,10 @@ module.exports = {
         },
         //Abstract
         green: '#9EA620',
-        gray:'#F2F2F2',
+        gray: {
+          DEFAULT: '#F2F2F2',
+          light: '#E5E5E5',
+        },
         blue: '#00B2CD',
       },
       fontFamily: {
@@ -93,25 +96,25 @@ module.exports = {
         'body-xl': ['24px', { lineHeight: '36px'}],
         
 
-        'h1': ['27px', { lineHeight: '42px'}],
-        'h1-lg': ['42px', { lineHeight: '63px'}],
-        'h1-intro': ['28px', { lineHeight: '42px'}],
-        'h1-intro-lg': ['48px', { lineHeight: '72px'}],
+        'h1': ['27px', { lineHeight: '42px' }],
+        'h1-lg': ['42px', { lineHeight: '63px' }],
+        'h1-intro': ['28px', { lineHeight: '42px' }],
+        'h1-intro-lg': ['48px', { lineHeight: '72px' }],
 
-        'h2': ['26px', { lineHeight: '39px'}],
-        'h2-lg': ['32px', { lineHeight: '48px'}],
+        'h2': ['26px', { lineHeight: '39px' }],
+        'h2-lg': ['32px', { lineHeight: '48px' }],
 
-        'h3': ['22px', { lineHeight: '33px'}],
-        'h3-lg': ['24px', { lineHeight: '36px'}],
+        'h3': ['22px', { lineHeight: '33px' }],
+        'h3-lg': ['24px', { lineHeight: '36px' }],
 
-        'h4': ['18px', { lineHeight: '27px'}],
-        'h4-lg': ['20px', { lineHeight: '30px'}],
+        'h4': ['18px', { lineHeight: '27px' }],
+        'h4-lg': ['20px', { lineHeight: '30px' }],
         'h4-post-xl': '1.3em',
 
-        'h5': ['14px', { lineHeight: '21px'}],
+        'h5': ['14px', { lineHeight: '21px' }],
         'h5-post-xl': '1.1em',
         
-        'sub': ['12px', { lineHeight: '18px'}],
+        'sub': ['12px', { lineHeight: '18px' }],
       },
       width: {
         'initial': 'initial',
@@ -124,6 +127,7 @@ module.exports = {
         'slanted-image-md': '300px',
         'slanted-image-lg': '420px',
         'slanted-image-xl': '580px',
+        'slider-dot': '20px',
         '46%': '46%',
         '47%': '47%',
         '48%': '48%',
@@ -135,6 +139,8 @@ module.exports = {
         'card-lg': '374px',
         'text-image-copy': '470px',
         'text-image-bg': '700px',
+        'testimonial': '840px',
+        'testimonial-container': '1060px',
       },
       height: {
         'header': '85px',
@@ -143,6 +149,7 @@ module.exports = {
         'card-figure-lg': '320px',
         'post-figure-md': '288px',
         'post-figure-lg': '450px',
+        'slider-dot': '20px',
       },
       minHeight: {
         'page-intro-section': '530px',
