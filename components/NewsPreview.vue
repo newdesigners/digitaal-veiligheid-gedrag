@@ -53,13 +53,13 @@ export default {
     selectedNews() {
       // Load reference data/content from store
       const news = this.$store.state.news.news.filter((n) => {
-        return this.blok.news.includes(n.uuid)
-      })
+        return this.blok.news.includes(n.uuid);
+      });
  
       // Enable the ordering of the article previews
       news.sort((a, b) => {
         return this.blok.news.indexOf(a.uuid) - this.blok.news.indexOf(b.uuid);
-      })
+      });
 
       return news;
     },

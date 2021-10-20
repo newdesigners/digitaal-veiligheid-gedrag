@@ -135,6 +135,7 @@ module.exports = {
         'card-lg': '374px',
         'text-image-copy': '470px',
         'text-image-bg': '700px',
+        'testimonial': '840px',
       },
       height: {
         'header': '85px',

@@ -70,6 +70,13 @@ export default {
       context.store.commit('news/setNews', newsRefRes.data.stories);
       context.store.commit('news/setLoaded', '1');
     }
+
+    if(context.store.state.experiences.loaded !== '1') {
+      let experiencesRefRes = await context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'ervaringen/', version: version });
+
+      context.store.commit('experiences/setExperiences', experiencesRefRes.data.stories);
+      context.store.commit('experiences/setLoaded', '1');
+    }
   },
 }
 </script>
