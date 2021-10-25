@@ -1,0 +1,31 @@
+.content-col {
+  &__article {
+    @apply pb-60 sm:pb-100 lg:pb-120;
+
+    &--small {
+      @apply max-w-testimonial;
+    }
+  }
+
+  &__title {
+    @apply text-green pb-10 lg:pb-20;
+  }
+
+  &__content {
+    @apply lg:flex lg:justify-between;
+  }
+
+  &__column {
+    @apply pb-30 lg:max-w-content-column xl:max-w-content-column-lg 2xl:max-w-content-column-xl;
+
+    .text-content {
+      &__title {
+        @apply pb-5;
+      }
+
+      &__body {
+        @apply xl:text-body;
+      }
+    }
+  }
+}

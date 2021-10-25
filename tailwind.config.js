@@ -141,6 +141,9 @@ module.exports = {
         'text-image-bg': '700px',
         'testimonial': '840px',
         'testimonial-container': '1060px',
+        'content-column': '440px',
+        'content-column-lg': '540px',
+        'content-column-xl': '640px',
       },
       height: {
         'header': '85px',
