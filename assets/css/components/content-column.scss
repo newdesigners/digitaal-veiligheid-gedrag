@@ -19,6 +19,8 @@
     @apply pb-30 lg:max-w-content-column xl:max-w-content-column-lg 2xl:max-w-content-column-xl;
 
     .text-content {
+      @apply pb-20 lg:pb-40;
+      
       &__title {
         @apply pb-5;
       }
