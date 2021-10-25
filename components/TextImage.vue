@@ -4,9 +4,10 @@
     class="text-image"
   >
     <article class="container container--inner text-image__article">
-      <div class="text-image__content" :class="{ 'text-image__content--reverse' : blok.reverse }">
+      <div class="text-image__content" :class="{ 'text-image__content--reverse' : blok.reverse, 'text-image__content--intro' : blok.introduction }">
         <div class="text-image__copy">
           <component
+            :isIntro="ownBlok.introduction"
             v-for="blok in blok.copy"
             :key="blok._uid"
             :blok="blok"
@@ -31,5 +32,10 @@ export default {
       required: true,
     },
   },
+  computed: {
+    ownBlok() {
+      return this.blok;
+    }
+  }
 };
 </script>
