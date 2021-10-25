@@ -37,8 +37,8 @@ export default {
   },
   computed: {
     containerWidthStyle() {
-      return `content-col__article--${ this.blok.container_width }` 
-    }
-  }
+      return `content-col__article--${ this.blok.container_width }`;
+    },
+  },
 };
 </script>
