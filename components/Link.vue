@@ -2,14 +2,14 @@
   <div v-editable="link">
     <!-- External link -->
     <a
-      v-if="label && link.linktype === 'url'"
+      v-if="link && label && link.linktype === 'url'"
       :href="link.url"
       target="_blank"
       rel="noopener noreferrer"
       class="link"
     >
       <span class="link__label">{{ label }}</span>
-      <span v-if="icon"><Resources type="chevron-right" /></span>
+      <span v-if="icon"><Resources :type="icon" /></span>
     </a>
 
      <!-- Internal link -->
@@ -19,8 +19,21 @@
       class="link"
     >
       <span class="link__label">{{ label }}</span>
-      <span v-if="icon"><Resources type="chevron-right" /></span>
+      <span v-if="icon"><Resources :type="icon" /></span>
     </NuxtLink>
+    
+    <!-- Download link -->
+    <a
+      v-if="download"
+      :href="download.filename"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="link"
+      download
+    >
+      <span class="link__label">{{ label }}</span>
+      <span class="link__icon" v-if="icon"><Resources type="download" /></span>
+    </a>
   </div>
 </template>
 
@@ -33,12 +46,19 @@ export default {
     },
     link: {
       type: Object,
-      required: true,
+      default() {
+        return {
+          linktype: '',
+        };
+      },
     },
     icon: {
-      type: Boolean,
-      default: true,
-    }
+      type: String,
+      default: 'chevron-right',
+    },
+    download: {
+      type: Object,
+    },
   },
 };
 </script>

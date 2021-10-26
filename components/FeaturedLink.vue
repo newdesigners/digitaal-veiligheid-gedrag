@@ -8,12 +8,12 @@
       icon="download"
       :label="blok.button_label"
       :download="blok.file"
-      />
+    />
     <Button
       v-if="blok.button_url.url || blok.button_url.cached_url"
       class="featured-link__button"
       :button="blok.button_url"
-      icon="download"
+      icon="share"
       :label="blok.button_label"
     />
   </div>
