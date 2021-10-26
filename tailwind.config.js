@@ -145,7 +145,6 @@ module.exports = {
         'content-column-lg': '540px',
         'content-column-xl': '640px',
         'featured-link-title': '240px',
-        'featured-double-link-link': '230px',
       },
       height: {
         'header': '85px',
