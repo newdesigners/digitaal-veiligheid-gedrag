@@ -19,6 +19,21 @@
         }
       }
     }
+
+    &--intro {
+      @apply pt-60 lg:pt-80;
+
+      .text-image {
+        &__copy {
+          
+          .text-content {
+            &__body {
+              @apply text-h3 lg:text-h3-lg;
+            }
+          }
+        }
+      }
+    }
   }
 
   &__copy {
