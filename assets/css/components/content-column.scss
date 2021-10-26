@@ -29,5 +29,9 @@
         @apply xl:text-body;
       }
     }
+
+    .featured-link {
+      @apply sm:max-w-none;
+    }
   }
 }

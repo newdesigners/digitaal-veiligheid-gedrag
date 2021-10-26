@@ -53,7 +53,7 @@ export default {
     },
     download: {
       type: Object,
-    }
+    },
   },
 };
 </script>

@@ -120,7 +120,7 @@ module.exports = {
         'initial': 'initial',
         'hhs-logo': '95px',
         'icon': '12px',
-        'icon-lg': '22px',
+        'icon-lg': '20px',
         'card-figure': '240px',
         'card-figure-lg': '374px',
         'slanted-image': '250px',
