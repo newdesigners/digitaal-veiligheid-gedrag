@@ -32,7 +32,7 @@
       download
     >
       <span class="link__label">{{ label }}</span>
-      <span class="link__icon" v-if="icon"><Resources :type="icon" /></span>
+      <span class="link__icon" v-if="icon"><Resources type="download" /></span>
     </a>
   </div>
 </template>
@@ -46,10 +46,11 @@ export default {
     },
     link: {
       type: Object,
-      required: true,
-      default: {
-        linktype: {}
-      }
+      default() {
+        return {
+          linktype: '',
+        };
+      },
     },
     icon: {
       type: String,

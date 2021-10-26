@@ -1,13 +1,11 @@
 <template>
   <div class="featured-double-link" v-editable="blok">
-    <pre>
-      {{ blok }}
-    </pre>
-    <FeaturedLink v-for="b in blok.featured" :key="b.uuid"
-      :blok="b"
-    />
-    <LinkContent v-for="b in blok.link" :key="b.uuid"
-      :blok="b"
+    <FeaturedLink v-for="b in blok.featured" :key="b.uuid" :blok="b" />
+    <component
+      v-for="blok in blok.link"
+      :key="blok._uid"
+      :blok="blok"
+      :is="blok.component"
     />
   </div>
 </template>

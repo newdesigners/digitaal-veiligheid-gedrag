@@ -2,6 +2,6 @@
   @apply text-h4 lg:text-h4-lg font-poppins underline text-blue inline-flex items-center font-bold;
 
   &__label {
-    @apply pr-9;
+    @apply break-words pr-9;
   }
 }

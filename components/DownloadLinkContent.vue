@@ -2,9 +2,9 @@
   <div v-editable="blok">
     <Link
       class="link-content"
-      :label="blok.link_label"
-      :link="{}"
+      :label="blok.file_label"
       :download="blok.file"
+      icon="download"
     />
   </div>
 </template>
