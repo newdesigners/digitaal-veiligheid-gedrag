@@ -1,0 +1,17 @@
+.gallery {
+  @apply mb-50 lg:flex justify-between flex-wrap;
+
+  .image {
+    &__figure {
+      @apply mb-10 lg:w-48% lg:max-w-gallery-image lg:mb-30 xl:mb-45 2xl:mb-55 2xl:max-w-none;
+
+      &:only-child {
+        @apply max-w-none w-full h-auto mb-0;
+      }
+    }
+
+    &__image {
+      @apply w-full h-auto;
+    }
+  }
+}

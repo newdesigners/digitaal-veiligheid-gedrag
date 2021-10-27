@@ -1,0 +1,9 @@
+.resources-content {
+  &__title {
+    @apply pb-20 text-green;
+  }
+
+  .featured-link {
+    @apply max-w-none lg:mb-10;
+  }
+}

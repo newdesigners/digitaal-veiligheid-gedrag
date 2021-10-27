@@ -1,11 +1,6 @@
 <template>
-  <div v-editable="blok">
-    <component
-      v-for="blok in blok.body"
-      :key="blok._uid"
-      :blok="blok"
-      :is="blok.component"
-    />
+  <div class="gallery" v-editable="blok">
+    <ImageContent v-for="image in blok.images" :blok="image" :key="image._uid" />
   </div>
 </template>
  
