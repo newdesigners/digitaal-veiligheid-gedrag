@@ -35,7 +35,7 @@ export default {
   computed: {
     ownBlok() {
       return this.blok;
-    }
-  }
+    },
+  },
 };
 </script>
