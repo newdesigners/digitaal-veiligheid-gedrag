@@ -32,7 +32,9 @@ module.exports = {
       34: "34px",
       36: "36px",
       40: "40px",
+      45: "45px",
       50: "50px",
+      55: "55px",
       60: "60px",
       70: "70px",
       80: "80px",
@@ -132,6 +134,7 @@ module.exports = {
         '47%': '47%',
         '48%': '48%',
         '49%': '49%',
+        'game-image': '178px',
       },
       maxWidth: {
         'text': '690px',
@@ -145,6 +148,7 @@ module.exports = {
         'content-column-lg': '540px',
         'content-column-xl': '640px',
         'featured-link-title': '240px',
+        'gallery-image': '580px',
       },
       height: {
         'header': '85px',

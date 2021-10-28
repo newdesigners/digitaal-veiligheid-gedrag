@@ -1,0 +1,19 @@
+.game {
+  @apply lg:flex items-center;
+
+  &__google {
+    @apply inline-flex pr-10;
+
+    a {
+      @apply inline-block;
+
+      img {
+        @apply w-game-image;
+      }
+    }
+  }
+
+  &__link {
+    @apply pl-13;
+  }
+}
