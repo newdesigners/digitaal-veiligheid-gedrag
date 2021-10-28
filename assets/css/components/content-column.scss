@@ -1,6 +1,6 @@
 .content-col {
   &__article {
-    @apply pb-60 sm:pb-100 lg:pb-120;
+    @apply pb-60 sm:pb-40 lg:pb-60;
 
     &--small {
       @apply max-w-testimonial 2xl:max-w-none 2xl:w-8/12;
@@ -8,7 +8,7 @@
       .content-col {
         &__column {
           &--full {
-            @apply lg:max-w-none;
+            @apply pb-0 lg:max-w-none;
           }
         }
       }
