@@ -1,21 +1,46 @@
 .text-grid {
-
+    h2 {
+        font-size: 24px;
+        color: #9EA620;
+    }
+    p {
+        font-size: 18px;
+    }
+    .grid__items {
+        display: flex;
+        margin-top: 30px;
+        justify-content: space-between;
+        align-items: left;
+    }
 }
+
 /* sm */
 @media (min-width: 640px) {
+    p {
+        width: 580px;
+    }
 }
 
 @media (min-width: 768px) {
-
+    p {
+        width: 580px;
+    }
 }
 
 @media (min-width: 1024px) {
-
+    p {
+        width: 580px;
+    }
 }
 @media (min-width: 1280px) {
 
+  p {
+        width: 580px;
+    }   
 }
 
 @media (min-width: 1536px) {
-
+    p{
+        width: 580px;
+    }
 }
