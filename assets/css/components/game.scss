@@ -2,7 +2,7 @@
   @apply lg:flex items-center;
 
   &__google {
-    @apply inline-block pr-10;
+    @apply inline-flex pr-10;
 
     a {
       @apply inline-block;
