@@ -10,6 +10,12 @@
       @apply sm:flex-row-reverse;
 
       .text-image {
+        &__copy {
+          > :last-of-type {
+            @apply pb-30 lg:pb-0; 
+          }
+        }
+        
         &__figure {
           @apply justify-start;
 
