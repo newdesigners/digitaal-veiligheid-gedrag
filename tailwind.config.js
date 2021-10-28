@@ -134,6 +134,7 @@ module.exports = {
         '47%': '47%',
         '48%': '48%',
         '49%': '49%',
+        'game-image': '178px',
       },
       maxWidth: {
         'text': '690px',
