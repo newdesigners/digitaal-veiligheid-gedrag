@@ -47,6 +47,11 @@ export default {
     button: {
       type: Object,
       required: true,
+      default() {
+        return {
+          linktype: '',
+        };
+      },
     },
     icon: {
       type: String,
