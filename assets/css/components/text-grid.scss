@@ -1,6 +1,7 @@
 .text-grid {
     h2 {
         font-size: 24px;
+        /* text-h3 lg:text-h3-lg*/
         color: #9EA620;
     }
     p {
@@ -9,6 +10,10 @@
     .grid__items {
         display: flex;
         margin-top: 30px;
+        /*
+        @apply flex;
+        @apply pt-32
+        */;
         justify-content: space-between;
         align-items: left;
     }
@@ -20,25 +25,30 @@
         width: 580px;
     }
 }
-
+/* md */
 @media (min-width: 768px) {
     p {
         width: 580px;
     }
 }
-
+/* lg */
 @media (min-width: 1024px) {
     p {
         width: 580px;
     }
+
+    h2 {
+        font-size: 24px;
+    }
 }
+/* xl */
 @media (min-width: 1280px) {
 
   p {
         width: 580px;
     }   
 }
-
+/* 2xl */
 @media (min-width: 1536px) {
     p{
         width: 580px;
