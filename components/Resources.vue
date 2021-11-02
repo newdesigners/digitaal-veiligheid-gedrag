@@ -32,6 +32,23 @@
       <path d="M19.076.222H13.22a.924.924 0 1 0 0 1.848h3.626l-8.86 8.86a.924.924 0 1 0 1.307 1.306l8.86-8.86v3.626a.924.924 0 1 0 1.847 0V1.146a.924.924 0 0 0-.924-.924Z" fill="#00B2CD"/>
       <path d="M15.296 7.925a.924.924 0 0 0-.924.924v9.081H1.848V5.406h9.627a.924.924 0 1 0 0-1.848H.924A.924.924 0 0 0 0 4.482v14.372c0 .51.414.924.924.924h14.372c.51 0 .924-.413.924-.924V8.85a.924.924 0 0 0-.924-.924Z" fill="#00B2CD"/>
     </svg>
+
+    <!-- Search -->
+    <svg v-if="type === 'search'" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M14.678 4.05a7 7 0 1 1-9.9 9.9 7 7 0 0 1 9.9-9.9Zm2.67 9.742a9 9 0 1 0-2.003 2.24l7.11 7.11 2.122-2.121-7.229-7.229Z" fill="#fff"/>
+    </svg>
+
+    <!-- Chevron top --> 
+    <svg v-if="type ==='chevron-top'" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0_153:457)">
+        <path d="M-9.27754e-08 12.4388L2.12252 14.5612L9 7.68374L15.8775 14.5612L18 12.4388L9 3.43876L-9.27754e-08 12.4388Z" fill="white"/>
+      </g>
+      <defs>
+        <clipPath id="clip0_153:457">
+          <rect width="18" height="18" fill="white" transform="translate(18) rotate(90)"/>
+        </clipPath>
+      </defs>
+    </svg>
   </div>
 </template>
 

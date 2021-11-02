@@ -35,6 +35,7 @@ export default {
     { src: '~/plugins/vue-composition-api.js' },
     { src: '~/plugins/storyblok-rich-text-renderer.js' },
     { src: '~/plugins/vue-snip.js' },
+    { src: '~/plugins/outside-click-directive.js' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

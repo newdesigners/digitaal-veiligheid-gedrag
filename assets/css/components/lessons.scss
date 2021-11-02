@@ -3,6 +3,10 @@
 
   }
 
+  &__title {
+    @apply text-green;
+  }
+
   &__single {
     &-title {
 

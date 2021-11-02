@@ -17,4 +17,8 @@
       @apply w-icon-lg;
     }
   }
+
+  &--input {
+    @apply bg-blue rounded-l-none;
+  }
 }
