@@ -1,5 +1,5 @@
 .input {
-  @apply text-body-md py-16 px-20 border-2 rounded-md border-gray;
+  @apply block w-full text-body-md py-16 px-20 border-2 rounded-md border-gray;
 
   &--icon {
     @apply border-r-0 rounded-r-none;
@@ -7,5 +7,9 @@
 
   &__group {
     @apply flex;
+  }
+
+  &::placeholder {
+    @apply italic;
   }
 }

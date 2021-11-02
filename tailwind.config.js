@@ -36,6 +36,7 @@ module.exports = {
       50: "50px",
       55: "55px",
       60: "60px",
+      65: "65px",
       70: "70px",
       80: "80px",
       85: "85px",
@@ -60,6 +61,7 @@ module.exports = {
       'container': "theme(container.padding.DEFAULT)",
       'container-xl': "theme(container.padding.xl)",
       '48%': '48%',
+      '49%': '49%',
     },
     extend: {
       colors: {
@@ -135,6 +137,7 @@ module.exports = {
         '48%': '48%',
         '49%': '49%',
         'game-image': '178px',
+        'input-filter': '290px',
       },
       maxWidth: {
         'text': '690px',

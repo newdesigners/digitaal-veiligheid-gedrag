@@ -2,7 +2,7 @@
   @apply relative;
 
   &__selected {
-    @apply flex hover:cursor-pointer;
+    @apply flex hover:cursor-pointer h-full;
   }
 
   &__value {

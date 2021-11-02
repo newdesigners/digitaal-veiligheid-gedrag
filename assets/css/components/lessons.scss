@@ -3,8 +3,28 @@
 
   }
 
+  &__header {
+    @apply lg:flex;
+  }
+
   &__title {
-    @apply text-green;
+    @apply text-green pb-20;
+  }
+
+  &__filters {
+    @apply mb-20 sm:flex justify-between;
+
+    & > * {
+      @apply sm:w-49%;
+    }
+
+    .input__group {
+      @apply mb-10 sm:mb-0 lg:w-input-filter;
+    }
+
+    .dropdown-select {
+      @apply lg:w-input-filter;
+    }
   }
 
   &__single {
