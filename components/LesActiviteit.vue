@@ -1,7 +1,7 @@
 <template>
   <article class="lessons__single" v-editable="blok">
-    <h3 class="lesson__single-title">{{ blok.title }}</h3>
-    <p class="lesson__single-description">{{ blok.description }}</p>
+    <h3 class="lessons__single-title">{{ blok.title }}</h3>
+    <p class="lessons__single-body">{{ blok.description }}</p>
     <component
       v-for="blok in blok.file"
       :key="blok._uid"

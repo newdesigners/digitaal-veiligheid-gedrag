@@ -4,22 +4,22 @@
   }
 
   &__header {
-    @apply lg:flex;
+    @apply lg:flex items-center justify-between pb-30;
   }
 
   &__title {
-    @apply text-green pb-20;
+    @apply text-green pb-20 lg:pb-0;
   }
 
   &__filters {
-    @apply mb-20 sm:flex justify-between;
+    @apply sm:flex justify-between;
 
     & > * {
       @apply sm:w-49%;
     }
 
     .input__group {
-      @apply mb-10 sm:mb-0 lg:w-input-filter;
+      @apply mb-10 sm:mb-0 lg:w-input-filter lg:mr-20 xl:mr-40;
     }
 
     .dropdown-select {
@@ -27,14 +27,23 @@
     }
   }
 
+  &__posts {
+    @apply lg:flex flex-wrap justify-between;
+  }
+
   &__single {
+    @apply pb-20 lg:w-48%;
+
     &-title {
-
+      @apply pb-10;
     }
 
-    &-description {
-
+    &-body {
+      @apply text-body-md pb-10 lg:pb-20;
     }
-    
+
+    .featured-link {
+      @apply max-w-none;
+    }
   }
 }

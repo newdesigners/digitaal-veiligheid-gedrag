@@ -14,7 +14,9 @@
           <DropdownSelect default="Kies een categorie" :options="['Audi', 'BMW', 'Citroen', 'Ford']" />
         </div>
       </header>
-      <LesActiviteit :blok="lesson.content" v-for="lesson in lessons" :key="lesson.uuid" />
+      <div class="lessons__posts">
+        <LesActiviteit :blok="lesson.content" v-for="lesson in lessons" :key="lesson.uuid" />
+      </div>
     </article>
   </section>
 </template>
