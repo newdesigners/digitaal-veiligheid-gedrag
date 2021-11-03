@@ -71,6 +71,8 @@ export default {
       context.store.commit('news/setLoaded', '1');
     }
 
+    //TODO: NOT SURE IF THIS IS NEEDED SINCE WE ARE GETTING THE LESSONS DIRECTLY IN THE COMPONENT ITSELF; THIS IS BAD IF WE ARE GETTING ALL THE LESSONS AND ITS LIKE 100 PAGES; WE ARE GETTING DATA THAT ARENT EVEN SHOWN;
+
     if(context.store.state.lessons.loaded !== '1') {
       let lessonsRefRes = await context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'lesactiviteiten/', version: version });
 

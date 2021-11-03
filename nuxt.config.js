@@ -36,6 +36,7 @@ export default {
     { src: '~/plugins/storyblok-rich-text-renderer.js' },
     { src: '~/plugins/vue-snip.js' },
     { src: '~/plugins/outside-click-directive.js' },
+    { src: '~/plugins/vue-lodash.js' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
