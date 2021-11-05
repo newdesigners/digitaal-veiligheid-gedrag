@@ -55,7 +55,7 @@ export default {
       total: 0,
       categories: [],
       selectedCategory: {},
-      perPage: 6,
+      perPage: 2,
       pageCount: 0,
       currentPage: 1,
     }
@@ -81,7 +81,7 @@ export default {
         starts_with: 'lesactiviteiten/',
         version,
         search_term: this.searchInput,
-        per_page: 6,
+        per_page: this.perPage,
         is_startpage: 0,
         filter_query: {
           categories: {
@@ -91,6 +91,7 @@ export default {
         page,
       });
       this.total = res.total;
+      console.log(this.pageCount);
       this.pageCount = Math.ceil(this.total / this.perPage);
 
       return res.data.stories;
@@ -120,7 +121,7 @@ export default {
           this.currentPage -= 1;
           break;
         default:
-          this.currentPage = value;
+          this.currentPage = page;
       }
       this.suggestions = await this.fetchSuggestions(this.currentPage);
     },

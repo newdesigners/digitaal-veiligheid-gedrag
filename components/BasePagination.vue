@@ -31,7 +31,7 @@ export default {
   props: {
     visiblePagesCount: {
       type: Number,
-      default: 5
+      default: 4
     },
     currentPage: {
       type: Number,
@@ -71,11 +71,11 @@ export default {
         return pagintationTriggers;
       }
 
-      // pagintationTriggersArray[0] = currentPage - visiblePagesThreshold + 1;
-      // const pagintationTriggers = pagintationTriggersArray.map((paginationTrigger, index) => { return pagintationTriggersArray[0] + index });
-      // pagintationTriggers.unshift(1);
-      // pagintationTriggers[pagintationTriggers.length - 1] = pageCount;
-      // return pagintationTriggers;
+      pagintationTriggersArray[0] = currentPage - visiblePagesThreshold + 1;
+      const pagintationTriggers = pagintationTriggersArray.map((paginationTrigger, index) => { return pagintationTriggersArray[0] + index });
+      pagintationTriggers.unshift(1);
+      pagintationTriggers[pagintationTriggers.length - 1] = pageCount;
+      return pagintationTriggers;
     },
   },
   methods: {
@@ -85,7 +85,7 @@ export default {
     previousPage() {
       this.$emit('previousPage', 'previous');
     },
-    onLoadPage() {
+    onLoadPage(page) {
       this.$emit('loadPage', page);
     },
   },
