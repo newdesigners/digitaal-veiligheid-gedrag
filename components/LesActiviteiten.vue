@@ -18,16 +18,17 @@
             />
             <button type="submit" class="button button--input"><Resources type="search" /></button>
           </div>
-          <DropdownSelect @get-category="handleGetCategory" default="Kies een categorie" :options="categories" />
+          <DropdownSelect 
+            @get-category="handleGetCategory"
+            :options="categories"
+          />
         </div>
       </header>
       <div class="lessons__posts">
-        <!-- total {{ total }}
-        <pre>{{ suggestions }}</pre> -->
         <div v-if="suggestions.length === 0 && searchInput !== ''" class="lessons__error">
           <h3 class="lessons__error-title">Geen resultaten gevonden :(</h3>
         </div>
-        <LesActiviteit :blok="lesson.content" v-for="lesson in suggestions" :key="lesson.uuid" />
+        <LesActiviteit :blok="lesson.content" v-for="lesson in suggestions" :key="lesson.id" />
       </div>
     </article>
   </section>
@@ -54,6 +55,7 @@ export default {
   async mounted() {
     this.suggestions = await this.fetchSuggestions();
     this.categories = await this.fetchCategories();
+    // this.categories.unshift({ name: 'Alle' });
   },
   // computed: {
   //   lessons() {
@@ -66,7 +68,7 @@ export default {
     onInputChange: debounce(async function() {
       this.suggestions = await this.fetchSuggestions();
     }, 
-    300),
+    400),
     async fetchSuggestions() {
       const version = process.env.NODE_ENV !== 'production' ? 'draft' : 'published';
       const res = await this.$storyapi.get('cdn/stories', {
@@ -83,7 +85,6 @@ export default {
         // page: 2
       });
       this.total = res.total;
-      console.log(res.data.stories);
       return res.data.stories;
     },
     async fetchCategories() {
@@ -92,7 +93,7 @@ export default {
         starts_with: 'categories/',
         version,
       });
-
+      res.data.stories.unshift({ name: 'Alle' });
       return res.data.stories;
     },
     async handleGetCategory(category) {

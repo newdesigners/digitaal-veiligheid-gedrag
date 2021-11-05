@@ -1,7 +1,7 @@
 <template>
   <div class="dropdown-select" v-click-outside="closeDropdown" :class="{ 'dropdown-select--open' : isOpen }">
     <div class="dropdown-select__selected" @click="open">
-      <div class="dropdown-select__value">{{ selected.name ? selected.name : this.default }}</div>
+      <div class="dropdown-select__value">{{ selected.name }}</div>
       <button type="submit" class="button button--input"><Resources class="dropdown-select__button" type="chevron-top" /></button>
     </div>
     <ul v-if="options" class="dropdown-select__options">
@@ -22,21 +22,19 @@ export default {
   data() {
     return {
       isOpen: false,
-      selected: {},
+      selected: {
+        name: 'Alle'
+      },
     }
   },
   props: {
-    default: {
-      type: String,
-      default: 'Alle',
-    },
     options: {
       type: Array,
       required: true,
     },
   },
   methods: {
-    open(){
+    open() {
       this.isOpen = !this.isOpen;
     },
     select(i) {

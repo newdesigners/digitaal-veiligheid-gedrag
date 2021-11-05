@@ -28,7 +28,7 @@
   }
 
   &__posts {
-    @apply lg:flex flex-wrap justify-between min-h-lessons-posts lg:min-h-lessons-posts-lg;
+    @apply lg:flex flex-wrap justify-between min-h-lessons-posts lg:min-h-lessons-posts-lg content-start;
   }
 
   &__single {
@@ -39,7 +39,7 @@
     }
 
     &-body {
-      @apply text-body-md pb-10 lg:pb-20 lg:min-h-lessons-single-text-lg; xl:min-h-lessons-single-text-xl;
+      @apply text-body-md pb-10 lg:pb-20 lg:min-h-lessons-single-text-lg xl:min-h-lessons-single-text-xl;
     }
 
     .featured-link {
