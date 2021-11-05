@@ -24,6 +24,7 @@
   html {
     height: -webkit-fill-available;
     scroll-behavior: smooth;
+    box-sizing: border-box;
   }
 
   body {
@@ -60,5 +61,17 @@
 
   h4 {
     @apply text-h4 lg:text-h4-lg;
+  }
+
+  select {
+    /* for Firefox */
+    -moz-appearance: none;
+    /* for Chrome */
+    -webkit-appearance: none;
+  }
+  
+  /* For IE10 */
+  select::-ms-expand {
+    display: none;
   }
 }

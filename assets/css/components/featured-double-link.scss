@@ -3,6 +3,18 @@
 
   .featured-link {
     @apply md:mb-0 md:mr-20 md:flex-shrink-0;
+
+    &__title {
+      @apply max-w-featured-link-title;
+    }
+
+    &__button {
+      .button {
+        &__label {
+          @apply lg:pr-30;
+        }
+      }
+    }
   }
 
   .link-content {
@@ -10,6 +22,7 @@
 
     .link {
       &__label {
+        @apply text-body-md;
       }
     }
   }
