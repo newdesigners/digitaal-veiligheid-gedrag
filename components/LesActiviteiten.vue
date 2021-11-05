@@ -25,7 +25,7 @@
         </div>
       </header>
       <div class="lessons__posts">
-        <div v-if="suggestions.length === 0 && searchInput !== ''" class="lessons__error">
+        <div v-if="suggestions.length === 0 && (searchInput !== '' || selectedCategory !== false)" class="lessons__error">
           <h3 class="lessons__error-title">Geen resultaten gevonden :(</h3>
         </div>
         <LesActiviteit :blok="lesson.content" v-for="lesson in suggestions" :key="lesson.id" />
@@ -55,15 +55,7 @@ export default {
   async mounted() {
     this.suggestions = await this.fetchSuggestions();
     this.categories = await this.fetchCategories();
-    // this.categories.unshift({ name: 'Alle' });
   },
-  // computed: {
-  //   lessons() {
-  //     return this.$store.state.lessons.lessons.filter((l) => {
-  //       return l.full_slug !== 'lesactiviteiten/';
-  //     });;
-  //   },
-  // },
   methods: {
     onInputChange: debounce(async function() {
       this.suggestions = await this.fetchSuggestions();
