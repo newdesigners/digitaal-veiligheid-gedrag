@@ -5,6 +5,7 @@
   >
     <article class="container container--inner lessons__article">
       <header class="lessons__header">
+        <pre>{{ pageCount }}</pre>
         <h2 class="lessons__title">{{ blok.title }}</h2>
         <div class="lessons__filters">
           <div class="input__group">
@@ -44,6 +45,8 @@ export default {
       total: 0,
       categories: [],
       selectedCategory: {},
+      perPage: 6,
+      pageCount: 0,
     }
   },
   props: {
@@ -55,6 +58,7 @@ export default {
   async mounted() {
     this.suggestions = await this.fetchSuggestions();
     this.categories = await this.fetchCategories();
+    this.updatePageCount();
     // this.categories.unshift({ name: 'Alle' });
   },
   // computed: {
@@ -67,7 +71,7 @@ export default {
   methods: {
     onInputChange: debounce(async function() {
       this.suggestions = await this.fetchSuggestions();
-    }, 
+    },
     400),
     async fetchSuggestions() {
       const version = process.env.NODE_ENV !== 'production' ? 'draft' : 'published';
@@ -100,6 +104,14 @@ export default {
       this.selectedCategory = category.uuid;
       this.suggestions = await this.fetchSuggestions();
     },
+    updatePageCount() {
+      this.pageCount = Math.ceil(this.total / this.perPage);
+    },
   },
+  watch: {
+    suggestions() {
+      this.updatePageCount();
+    }
+  }
 };
 </script>
