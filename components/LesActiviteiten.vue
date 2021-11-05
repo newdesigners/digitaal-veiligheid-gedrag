@@ -18,13 +18,13 @@
             />
             <button type="submit" class="button button--input"><Resources type="search" /></button>
           </div>
-          <DropdownSelect default="Kies een categorie" :options="['Audi', 'BMW', 'Citroen', 'Ford']" />
+          <DropdownSelect @get-category="handleGetCategory" default="Kies een categorie" :options="categories" />
         </div>
       </header>
       <div class="lessons__posts">
         <!-- total {{ total }}
         <pre>{{ suggestions }}</pre> -->
-        <div v-if="suggestions.length === 0 && saerchInput !== ''" class="lessons__error">
+        <div v-if="suggestions.length === 0 && searchInput !== ''" class="lessons__error">
           <h3 class="lessons__error-title">Geen resultaten gevonden :(</h3>
         </div>
         <LesActiviteit :blok="lesson.content" v-for="lesson in suggestions" :key="lesson.uuid" />
@@ -41,6 +41,8 @@ export default {
       searchInput: '',
       suggestions: [],
       total: 0,
+      categories: [],
+      selectedCategory: {},
     }
   },
   props: {
@@ -51,6 +53,7 @@ export default {
   },
   async mounted() {
     this.suggestions = await this.fetchSuggestions();
+    this.categories = await this.fetchCategories();
   },
   // computed: {
   //   lessons() {
@@ -72,14 +75,29 @@ export default {
         search_term: this.searchInput,
         per_page: 6,
         is_startpage: 0,
+        filter_query: {
+          categories: {
+            in_array: this.selectedCategory,
+          },
+        },
         // page: 2
       });
       this.total = res.total;
-      console.log(res);
+      console.log(res.data.stories);
       return res.data.stories;
     },
-    onInputBlur() {
-      setTimeout(() => (this.suggestions = []), 300)
+    async fetchCategories() {
+      const version = process.env.NODE_ENV !== 'production' ? 'draft' : 'published';
+      const res = await this.$storyapi.get('cdn/stories', {
+        starts_with: 'categories/',
+        version,
+      });
+
+      return res.data.stories;
+    },
+    async handleGetCategory(category) {
+      this.selectedCategory = category.uuid;
+      this.suggestions = await this.fetchSuggestions();
     },
   },
 };

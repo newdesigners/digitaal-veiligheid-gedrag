@@ -1,11 +1,18 @@
 <template>
   <div class="dropdown-select" v-click-outside="closeDropdown" :class="{ 'dropdown-select--open' : isOpen }">
     <div class="dropdown-select__selected" @click="open">
-      <div class="dropdown-select__value">{{ selected ? selected : this.default }}</div>
+      <div class="dropdown-select__value">{{ selected.name ? selected.name : this.default }}</div>
       <button type="submit" class="button button--input"><Resources class="dropdown-select__button" type="chevron-top" /></button>
     </div>
     <ul v-if="options" class="dropdown-select__options">
-      <li class="dropdown-select__item" :class="{ 'dropdown-select__item--selected' : selected === item }" v-for="(item, index) in options" :key="index" @click="select(item)">{{ item }}</li>
+      <li 
+        class="dropdown-select__item"
+        :class="{ 'dropdown-select__item--selected' : selected.name === item.name }"
+        v-for="(item, index) in options" :key="index"
+        @click="select(item)"
+      >
+        {{ item.name }}
+      </li>
     </ul>
   </div>
 </template>
@@ -15,7 +22,7 @@ export default {
   data() {
     return {
       isOpen: false,
-      selected: '',
+      selected: {},
     }
   },
   props: {
@@ -34,6 +41,7 @@ export default {
     },
     select(i) {
       this.selected = i;
+      this.$emit('get-category', i);
       this.closeDropdown();
     },
     closeDropdown() {
