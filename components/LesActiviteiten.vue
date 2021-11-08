@@ -35,8 +35,8 @@
           :current-page="currentPage"
           :page-count="pageCount"
           class="articles-list__pagination"
-          @nextPage="pageChangeHandle"
-          @previouPage="pageChangeHandle"
+          @nextPage="pageChangeHandle('next')"
+          @previousPage="pageChangeHandle('previous')"
           @loadPage="pageChangeHandle"
         />
       </footer>
@@ -48,14 +48,17 @@
 import debounce from 'lodash/debounce';
 
 export default {
+  static: {
+    visibleItemsPerPageCount: 6,
+  },
   data() {
     return {
       searchInput: '',
       suggestions: [],
-      total: 0,
       categories: [],
       selectedCategory: {},
-      perPage: 2,
+      // perPage: 6,
+      total: 0,
       pageCount: 0,
       currentPage: 1,
     }
@@ -81,7 +84,7 @@ export default {
         starts_with: 'lesactiviteiten/',
         version,
         search_term: this.searchInput,
-        per_page: this.perPage,
+        per_page: this.$options.static.visibleItemsPerPageCount,
         is_startpage: 0,
         filter_query: {
           categories: {
@@ -90,9 +93,7 @@ export default {
         },
         page,
       });
-      this.total = res.total;
-      console.log(this.pageCount);
-      this.pageCount = Math.ceil(this.total / this.perPage);
+      this.pageCount = Math.ceil(res.total / this.$options.static.visibleItemsPerPageCount);
 
       return res.data.stories;
     },
@@ -109,11 +110,8 @@ export default {
       this.selectedCategory = category.uuid;
       this.suggestions = await this.fetchSuggestions();
     },
-    updatePageCount() {
-      this.pageCount = Math.ceil(this.total / this.perPage);
-    },
-    async pageChangeHandle(page) {
-      switch (page) {
+    async pageChangeHandle(value) {
+      switch (value) {
         case 'next':
           this.currentPage += 1;
           break;
@@ -121,8 +119,8 @@ export default {
           this.currentPage -= 1;
           break;
         default:
-          this.currentPage = page;
-      }
+          this.currentPage = value;
+      };
       this.suggestions = await this.fetchSuggestions(this.currentPage);
     },
   },

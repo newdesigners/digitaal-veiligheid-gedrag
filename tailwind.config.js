@@ -168,7 +168,7 @@ module.exports = {
         'page-intro-section-lg': '600px',
         'lessons-single-text-lg': '210px',
         'lessons-single-text-xl': '182px',
-        'lessons-posts': '480px',
+        'lessons-posts': '450px',
         'lessons-posts-lg': '1080px',
       },
       maxHeight: {
@@ -182,6 +182,9 @@ module.exports = {
       },
       center: true,
     },
+    fill: theme => ({
+      'gray': theme('colors.gray'),
+    }),
   },
   variants: {
     extend: {

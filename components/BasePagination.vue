@@ -1,37 +1,38 @@
 <template>
   <div class="base-pagination">
-    <button
-      class="base-pagination__button"
-      :class="{ 'base-pagination__button--disable': isPreviousButtonDisabled }"
-      @click="previousPage"
-    >
-      Previous
-    </button>
-    <!-- <pre>{{ paginationTriggers }}</pre> -->
-    <BasePaginationTrigger
-      v-for="paginationTrigger in paginationTriggers"
-      :class="{ 'base-pagination__description--current': paginationTrigger === currentPage }"
-      :key="paginationTrigger"
-      :pageNumber="paginationTrigger"
-      class="base-pagination__description"
-      @loadPage="onLoadPage"
-    />
-    <button
-      class="base-pagination__button"
-      :class="{'base-pagination__button--disable': isNextButtonDisabled }"
-      @click="nextPage"
-    >
-      Next
-    </button>
+    <div class="base-pagination" v-if="pageCount !== 1">
+      <button
+        class="base-pagination__button"
+        :class="{ 'base-pagination__button--disable': isPreviousButtonDisabled }"
+        @click="previousPage"
+      >
+        <Resources class="base-pagination__button-src" type="chevron-right" /> 
+      </button>
+      <BasePaginationTrigger
+        v-for="paginationTrigger in paginationTriggers"
+        :class="{ 'base-pagination__trigger--current': paginationTrigger === currentPage }"
+        :key="paginationTrigger"
+        :pageNumber="paginationTrigger"
+        class="base-pagination__trigger"
+        @loadPage="onLoadPage"
+      />
+      <button
+        class="base-pagination__button"
+        :class="{'base-pagination__button--disable': isNextButtonDisabled }"
+        @click="nextPage"
+      >
+        <Resources class="base-pagination__button-src" type="chevron-right" /> 
+      </button>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    visiblePagesCount: {
-      type: Number,
-      default: 4
+    visiblePagesCount: { 
+      type: Number, 
+      default: 5,
     },
     currentPage: {
       type: Number,
@@ -53,6 +54,11 @@ export default {
       const currentPage = this.currentPage;
       const pageCount = this.pageCount;
       const visiblePagesCount = this.visiblePagesCount;
+      // if(pageCount < this.visiblePagesCount) {
+      //   console.log(pageCount);
+      //   visiblePagesCount = pageCount;
+      // }
+      ///let visiblePagesCount = pageCount <= this.visiblePagesCount ? pageCount : this.visiblePagesCount;
       const visiblePagesThreshold = (visiblePagesCount - 1) / 2;
       const pagintationTriggersArray = Array(this.visiblePagesCount - 1).fill(0);
 
@@ -66,27 +72,33 @@ export default {
       }
 
       if(currentPage >= pageCount - visiblePagesThreshold + 1) {
-        const pagintationTriggers = pagintationTriggersArray.map((paginationTrigger, index) => { return pageCount - index });
+        const pagintationTriggers = pagintationTriggersArray.map((paginationTrigger, index) => {
+          return pageCount - index;
+        });
         pagintationTriggers.reverse().unshift(1);
         return pagintationTriggers;
       }
 
-      pagintationTriggersArray[0] = currentPage - visiblePagesThreshold + 1;
-      const pagintationTriggers = pagintationTriggersArray.map((paginationTrigger, index) => { return pagintationTriggersArray[0] + index });
+      pagintationTriggersArray[0] = currentPage - visiblePagesThreshold + 1
+      const pagintationTriggers = pagintationTriggersArray.map((paginationTrigger, index) => {
+        return pagintationTriggersArray[0] + index
+      });
       pagintationTriggers.unshift(1);
       pagintationTriggers[pagintationTriggers.length - 1] = pageCount;
-      return pagintationTriggers;
+      return pagintationTriggers
     },
   },
   methods: {
     nextPage() {
-      this.$emit('nextPage', 'next');
+      if(this.isNextButtonDisabled) return;
+      this.$emit('nextPage');
     },
     previousPage() {
-      this.$emit('previousPage', 'previous');
+      if(this.isPreviousButtonDisabled) return;
+      this.$emit('previousPage');
     },
-    onLoadPage(page) {
-      this.$emit('loadPage', page);
+    onLoadPage(value) {
+      this.$emit('loadPage', value);
     },
   },
 };
