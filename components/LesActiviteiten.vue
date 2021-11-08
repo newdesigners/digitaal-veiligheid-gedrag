@@ -56,7 +56,6 @@ export default {
       categories: [],
       selectedCategory: {},
       perPage: 7,
-      total: 0,
       pageCount: 0,
       currentPage: 1,
     }
