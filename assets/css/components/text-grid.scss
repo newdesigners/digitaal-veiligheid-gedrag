@@ -1,18 +1,13 @@
-.text-grid {
+.text-grid  {
     h2 {
-        font-size: 24px;
-        color: #9EA620;
+        @apply text-body-xl text-green pb-10;
     }
-    p {
-        font-size: 18px;
+     p {
+        @apply pb-2;
     }
     .grid__items {
-        display: flex;
-        margin-top: 30px;
-        justify-content: space-between;
-        align-items: left;
+        @apply flex mt-20 justify-between;
     }
-}
 
 /* sm */
 @media (min-width: 640px) {
@@ -34,7 +29,7 @@
 }
 @media (min-width: 1280px) {
 
-  p {
+    p {
         width: 580px;
     }   
 }
@@ -43,4 +38,5 @@
     p{
         width: 580px;
     }
+}
 }
