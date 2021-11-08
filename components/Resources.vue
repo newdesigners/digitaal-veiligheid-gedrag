@@ -14,7 +14,7 @@
     <svg v-if="type === 'chevron-right'" width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M2.561 0 .44 2.123 7.316 9 .44 15.877 2.56 18l9-9-9-9Z" fill="#00B2CD"/>
     </svg>
-
+    
     <!-- Download -->
     <svg v-if="type === 'download'" width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#a)" fill="#00B2CD">

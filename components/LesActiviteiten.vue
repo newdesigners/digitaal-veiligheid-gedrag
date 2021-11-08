@@ -19,31 +19,45 @@
             <button type="submit" class="button button--input"><Resources type="search" /></button>
           </div>
           <DropdownSelect 
-            @get-category="handleGetCategory"
+            @getCategory="handleGetCategory"
             :options="categories"
           />
         </div>
       </header>
       <div class="lessons__posts">
-        <div v-if="suggestions.length === 0 && searchInput !== ''" class="lessons__error">
+        <div v-if="suggestions.length === 0 && (searchInput !== '' || selectedCategory !== false)" class="lessons__error">
           <h3 class="lessons__error-title">Geen resultaten gevonden :(</h3>
         </div>
         <LesActiviteit :blok="lesson.content" v-for="lesson in suggestions" :key="lesson.id" />
       </div>
+      <footer class="lessons__pagination">
+        <BasePagination
+          v-if="suggestions"
+          :current-page="currentPage"
+          :page-count="pageCount"
+          class="articles-list__pagination"
+          @nextPage="pageChangeHandle('next')"
+          @previousPage="pageChangeHandle('previous')"
+          @loadPage="pageChangeHandle"
+        />
+      </footer>
     </article>
   </section>
 </template>
  
 <script>
 import debounce from 'lodash/debounce';
+
 export default {
   data() {
     return {
       searchInput: '',
       suggestions: [],
-      total: 0,
       categories: [],
       selectedCategory: {},
+      perPage: 7,
+      pageCount: 0,
+      currentPage: 1,
     }
   },
   props: {
@@ -55,36 +69,29 @@ export default {
   async mounted() {
     this.suggestions = await this.fetchSuggestions();
     this.categories = await this.fetchCategories();
-    // this.categories.unshift({ name: 'Alle' });
   },
-  // computed: {
-  //   lessons() {
-  //     return this.$store.state.lessons.lessons.filter((l) => {
-  //       return l.full_slug !== 'lesactiviteiten/';
-  //     });;
-  //   },
-  // },
   methods: {
     onInputChange: debounce(async function() {
       this.suggestions = await this.fetchSuggestions();
-    }, 
+    },
     400),
-    async fetchSuggestions() {
+    async fetchSuggestions(page = 1) {
       const version = process.env.NODE_ENV !== 'production' ? 'draft' : 'published';
       const res = await this.$storyapi.get('cdn/stories', {
         starts_with: 'lesactiviteiten/',
         version,
         search_term: this.searchInput,
-        per_page: 6,
+        per_page: this.perPage,
         is_startpage: 0,
         filter_query: {
           categories: {
             in_array: this.selectedCategory,
           },
         },
-        // page: 2
+        page,
       });
-      this.total = res.total;
+      this.pageCount = Math.ceil(res.total / this.perPage);
+
       return res.data.stories;
     },
     async fetchCategories() {
@@ -99,6 +106,19 @@ export default {
     async handleGetCategory(category) {
       this.selectedCategory = category.uuid;
       this.suggestions = await this.fetchSuggestions();
+    },
+    async pageChangeHandle(value) {
+      switch (value) {
+        case 'next':
+          this.currentPage += 1;
+          break;
+        case 'previous':
+          this.currentPage -= 1;
+          break;
+        default:
+          this.currentPage = value;
+      };
+      this.suggestions = await this.fetchSuggestions(this.currentPage);
     },
   },
 };
