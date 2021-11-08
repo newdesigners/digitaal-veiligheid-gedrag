@@ -39,7 +39,7 @@ export default {
     },
     select(i) {
       this.selected = i;
-      this.$emit('get-category', i);
+      this.$emit('getCategory', i);
       this.closeDropdown();
     },
     closeDropdown() {

@@ -19,7 +19,7 @@
             <button type="submit" class="button button--input"><Resources type="search" /></button>
           </div>
           <DropdownSelect 
-            @get-category="handleGetCategory"
+            @getCategory="handleGetCategory"
             :options="categories"
           />
         </div>
@@ -32,6 +32,7 @@
       </div>
       <footer class="lessons__pagination">
         <BasePagination
+          v-if="suggestions"
           :current-page="currentPage"
           :page-count="pageCount"
           class="articles-list__pagination"
@@ -48,16 +49,13 @@
 import debounce from 'lodash/debounce';
 
 export default {
-  static: {
-    visibleItemsPerPageCount: 6,
-  },
   data() {
     return {
       searchInput: '',
       suggestions: [],
       categories: [],
       selectedCategory: {},
-      // perPage: 6,
+      perPage: 7,
       total: 0,
       pageCount: 0,
       currentPage: 1,
@@ -84,7 +82,7 @@ export default {
         starts_with: 'lesactiviteiten/',
         version,
         search_term: this.searchInput,
-        per_page: this.$options.static.visibleItemsPerPageCount,
+        per_page: this.perPage,
         is_startpage: 0,
         filter_query: {
           categories: {
@@ -93,7 +91,7 @@ export default {
         },
         page,
       });
-      this.pageCount = Math.ceil(res.total / this.$options.static.visibleItemsPerPageCount);
+      this.pageCount = Math.ceil(res.total / this.perPage);
 
       return res.data.stories;
     },

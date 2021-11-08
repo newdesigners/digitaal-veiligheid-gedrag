@@ -6,7 +6,9 @@
         :class="{ 'base-pagination__button--disable': isPreviousButtonDisabled }"
         @click="previousPage"
       >
-        <Resources class="base-pagination__button-src" type="chevron-right" /> 
+        <Resources
+          class="base-pagination__button-src"
+          type="chevron-right" /> 
       </button>
       <BasePaginationTrigger
         v-for="paginationTrigger in paginationTriggers"
@@ -21,7 +23,10 @@
         :class="{'base-pagination__button--disable': isNextButtonDisabled }"
         @click="nextPage"
       >
-        <Resources class="base-pagination__button-src" type="chevron-right" /> 
+        <Resources
+          class="base-pagination__button-src"
+          type="chevron-right"
+        /> 
       </button>
     </div>
   </div>
@@ -29,11 +34,12 @@
 
 <script>
 export default {
+  data() {
+    return {
+      visiblePagesCount: 5,
+    }
+  },
   props: {
-    visiblePagesCount: { 
-      type: Number, 
-      default: 5,
-    },
     currentPage: {
       type: Number,
       required: true,
@@ -51,41 +57,40 @@ export default {
       return this.currentPage === this.pageCount;
     },
     paginationTriggers() {
-      const currentPage = this.currentPage;
-      const pageCount = this.pageCount;
-      const visiblePagesCount = this.visiblePagesCount;
-      // if(pageCount < this.visiblePagesCount) {
-      //   console.log(pageCount);
-      //   visiblePagesCount = pageCount;
-      // }
-      ///let visiblePagesCount = pageCount <= this.visiblePagesCount ? pageCount : this.visiblePagesCount;
-      const visiblePagesThreshold = (visiblePagesCount - 1) / 2;
-      const pagintationTriggersArray = Array(this.visiblePagesCount - 1).fill(0);
+      if(this.pageCount) {
+        const currentPage = this.currentPage;
+        const pageCount = this.pageCount;
+        let visiblePagesCount = this.visiblePagesCount;
+        visiblePagesCount = pageCount <= this.visiblePagesCount ? pageCount : visiblePagesCount;
+        
+        const visiblePagesThreshold = 2;
+        const pagintationTriggersArray = Array(visiblePagesCount - 1).fill(0);
 
-      if(currentPage <= visiblePagesThreshold + 1) {
-        pagintationTriggersArray[0] = 1;
-        const pagintationTriggers = pagintationTriggersArray.map((paginationTrigger, index) => {
-          return pagintationTriggersArray[0] + index;
+        if(currentPage <= visiblePagesThreshold + 1) {
+          pagintationTriggersArray[0] = 1;
+          const pagintationTriggers = pagintationTriggersArray.map((p, index) => {
+            return pagintationTriggersArray[0] + index;
+          });
+          pagintationTriggers.push(pageCount);
+          return pagintationTriggers;
+        }
+
+        if(currentPage >= pageCount - visiblePagesThreshold + 1) {
+          const pagintationTriggers = pagintationTriggersArray.map((p, index) => {
+            return pageCount - index;
+          });
+          pagintationTriggers.reverse().unshift(1);
+          return pagintationTriggers;
+        }
+
+        pagintationTriggersArray[0] = currentPage - visiblePagesThreshold + 1
+        const pagintationTriggers = pagintationTriggersArray.map((p, index) => {
+          return pagintationTriggersArray[0] + index
         });
-        pagintationTriggers.push(pageCount);
+        pagintationTriggers.unshift(1);
+        pagintationTriggers[pagintationTriggers.length - 1] = pageCount;
         return pagintationTriggers;
       }
-
-      if(currentPage >= pageCount - visiblePagesThreshold + 1) {
-        const pagintationTriggers = pagintationTriggersArray.map((paginationTrigger, index) => {
-          return pageCount - index;
-        });
-        pagintationTriggers.reverse().unshift(1);
-        return pagintationTriggers;
-      }
-
-      pagintationTriggersArray[0] = currentPage - visiblePagesThreshold + 1
-      const pagintationTriggers = pagintationTriggersArray.map((paginationTrigger, index) => {
-        return pagintationTriggersArray[0] + index
-      });
-      pagintationTriggers.unshift(1);
-      pagintationTriggers[pagintationTriggers.length - 1] = pageCount;
-      return pagintationTriggers
     },
   },
   methods: {
