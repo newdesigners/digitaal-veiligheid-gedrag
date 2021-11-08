@@ -1,10 +1,12 @@
 .lessons {
-  &__article {
-
-  }
+  @apply pb-100;
 
   &__header {
     @apply lg:flex items-center justify-between pb-30;
+  }
+  
+  &__pagination {
+    @apply text-center;
   }
 
   &__title {
@@ -28,7 +30,7 @@
   }
 
   &__posts {
-    @apply lg:flex flex-wrap justify-between min-h-lessons-posts lg:min-h-lessons-posts-lg content-start;
+    @apply lg:flex flex-wrap justify-between min-h-lessons-posts /*lg:min-h-lessons-posts-lg*/ content-start;
   }
 
   &__single {
