@@ -8,20 +8,15 @@
         </header>
         <div class="contact__form">
           <form
-            name="contact"
             method="post"
+            name="contact"
+            class="contact__form"
+            netlify
+            netlify-honeypot="bot-field"
             data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            class="form"
-            action="/bedankt"
           >
             <div class="contact__form-inputs">
-              <input 
-                type="hidden"
-                name="form-name"
-                value="contact"
-              />
-
+              <input type="hidden" name="form-name" value="contact">
               <div class="form__group form__group--half">
                 <label for="naam" class="form__label">
                   <span>Naam</span>
@@ -35,7 +30,6 @@
                   required
                 />
               </div>
-
               <div class="form__group form__group--half">
                 <label for="email" class="form__label">
                   <span>E-mailadres</span>
@@ -49,7 +43,6 @@
                   required
                 />
               </div>
-
               <div class="form__group">
                 <label for="onderwerp" class="form__label">
                   <span>Onderwerp</span>
@@ -63,7 +56,6 @@
                   required
                 />
               </div>
-
               <div class="form__group">
                 <label for="bericht" class="form__label">
                   <span>Bericht</span>
