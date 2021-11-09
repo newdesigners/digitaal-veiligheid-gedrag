@@ -62,6 +62,7 @@ module.exports = {
       'container-xl': "theme(container.padding.xl)",
       '48%': '48%',
       '49%': '49%',
+      'initial' : 'innital',
     },
     extend: {
       colors: {

@@ -4,11 +4,10 @@
     class="news"
   >
     <article class="container container--inner news__article">
-      <!-- <pre>{{ suggestions }}</pre> -->
       <div class="news__posts">
-        <ul class="news__posts-list">
-          <li class="news__posts-list-item" v-for="singleNews in suggestions" :key="singleNews.uuid">
-             <Card :link="singleNews.full_slug" :content="singleNews.content" />
+        <ul class="card__posts-list">
+          <li class="card__posts-list-item" v-for="singleNews in suggestions" :key="singleNews.uuid">
+            <Card :link="singleNews.full_slug" :content="singleNews.content" />
           </li>
         </ul>
       </div>
