@@ -14,7 +14,7 @@
             :is="blok.component"
           />
         </div>
-        <div class="text-image__image" v-if="blok.image">
+        <div class="text-image__image" v-if="blok.image.filename">
           <figure class="text-image__figure">
             <SlantedImage :reverse="blok.reverse" class="text-image__src" :url="blok.image.filename" />
           </figure>

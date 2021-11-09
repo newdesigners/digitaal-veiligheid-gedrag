@@ -24,8 +24,8 @@
     </div>
     <aside class="post__read-more">
       <h2 class="post__read-more-title">Lees ook</h2>
-      <ul class="post__read-more-list">
-        <li class="post__read-more-list-item" v-for="p in readMorePosts" :key="p.uuid">
+      <ul class="card__posts-list">
+        <li class="card__posts-list-item" v-for="p in readMorePosts" :key="p.uuid">
           <Card v-if="p.content" :link="p.full_slug" :content="p.content" /> 
         </li>
       </ul>
