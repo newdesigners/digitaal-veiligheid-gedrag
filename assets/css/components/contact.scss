@@ -1,0 +1,25 @@
+.contact {
+  &__article {
+    @apply pt-80;
+  }
+
+  &__header {
+    @apply pb-40;
+  }
+
+  &__pre-title {
+    @apply font-semibold text-blue;
+  }
+
+  &__title {
+    @apply text-green;
+  }
+  
+  &__form {
+    @apply pb-50 lg:pb-100;
+
+    &-inputs {
+      @apply md:flex flex-wrap;
+    }
+  }
+}

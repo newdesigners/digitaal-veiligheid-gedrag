@@ -1,0 +1,33 @@
+.form {
+  &__group {
+    @apply pb-30 lg:pb-40 w-full;
+
+    &--half {
+      @apply md:w-1/2 md:pr-40;
+
+      &:nth-of-type(even) {
+        @apply md:pr-0;
+      }
+    }
+  }
+
+  &__label {
+    @apply font-poppins font-bold text-body-md pb-10 lg:pb-20 block;
+
+    sup {
+      @apply text-green;
+    }
+  }
+
+  &__input {
+    @apply block w-full appearance-none border border-gray-dark text-body-md py-16 px-20 rounded-md;
+  }
+
+  &__submit {
+    @apply text-right;
+
+    span {
+      @apply pr-9;
+    }
+  }
+}
