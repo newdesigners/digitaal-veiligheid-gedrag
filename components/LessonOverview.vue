@@ -28,7 +28,7 @@
         <div v-if="suggestions.length === 0 && (searchInput !== '' || selectedCategory !== false)" class="lessons__error">
           <h3 class="lessons__error-title">Geen resultaten gevonden :(</h3>
         </div>
-        <LesActiviteit :blok="lesson.content" v-for="lesson in suggestions" :key="lesson.id" />
+        <Lesson :blok="lesson.content" v-for="lesson in suggestions" :key="lesson.id" />
       </div>
       <footer class="lessons__pagination">
         <BasePagination
