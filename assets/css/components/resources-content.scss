@@ -1,4 +1,6 @@
 .resources-content {
+  @apply pb-100;
+  
   &__title {
     @apply pb-20 text-green;
   }
