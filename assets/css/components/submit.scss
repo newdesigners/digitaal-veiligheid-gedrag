@@ -1,0 +1,13 @@
+.submit {
+  &__content {
+    @apply flex items-center flex-col py-40 md:py-100 lg:py-120;
+  }
+
+  &__heading {
+    @apply pb-10 lg:pb-20;
+  }
+
+  &__text {
+    @apply text-center pb-20 lg:pb-40;
+  }
+}
