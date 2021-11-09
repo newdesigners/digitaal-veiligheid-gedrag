@@ -3,7 +3,7 @@
     <!-- <pre>{{ content.featured_image }}</pre> -->
     <figure class="card__figure">
       <NuxtImg
-        v-if="content.featured_image"
+        v-if="content.featured_image.filename"
         class="card__image"
         format="webp"
         width="240"
