@@ -1,0 +1,48 @@
+.dropdown-select {
+  @apply relative;
+
+  &__selected {
+    @apply flex hover:cursor-pointer h-full;
+  }
+
+  &__value {
+    @apply flex-1 text-body-md py-16 px-20 border-2 rounded-md border-gray border-r-0 rounded-r-none;
+  }
+
+  &__button {
+    svg {
+      @apply transform rotate-180;
+    }
+  }
+
+  &__options {
+    @apply hidden absolute top-full left-0 right-0 bg-white border-2 rounded-md rounded-t-none border-t-0;
+  }
+
+  &__item {
+    @apply text-body-md py-16 px-20 hover:bg-gray hover:cursor-pointer;
+
+    &--selected {
+      @apply bg-gray;
+    }
+  }
+
+  &--open {
+    .dropdown-select {
+
+      &__value {
+        @apply rounded-b-none border-b-0;
+      }
+
+      &__button {
+        svg {
+          @apply transform rotate-0;
+        }
+      }
+
+      &__options {
+        @apply block;
+      }
+    }
+  }
+}

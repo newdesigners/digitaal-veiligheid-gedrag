@@ -2,6 +2,8 @@
   <figure v-editable="blok" class="image__figure">
     <NuxtImg
       v-if="blok.image.filename"
+      :width="width"
+      :height="height"
       class="image__image"
       :modifiers="{ smart: true }"
       provider="storyblok"
@@ -21,6 +23,14 @@ export default {
       required: true,
     },
     sizes: {
+      type: String,
+      default: '',
+    },
+    width: {
+      type: String,
+      default: '',
+    },
+    height: {
       type: String,
       default: '',
     }

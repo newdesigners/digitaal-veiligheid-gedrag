@@ -14,7 +14,7 @@
     <svg v-if="type === 'chevron-right'" width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M2.561 0 .44 2.123 7.316 9 .44 15.877 2.56 18l9-9-9-9Z" fill="#00B2CD"/>
     </svg>
-
+    
     <!-- Download -->
     <svg v-if="type === 'download'" width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#a)" fill="#00B2CD">
@@ -93,6 +93,23 @@
       <defs>
         <clipPath id="clip0_13:292">
           <rect width="28" height="28" fill="white"/>
+        </clipPath>
+      </defs>
+    </svg>
+    
+    <!-- Search -->
+    <svg v-if="type === 'search'" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M14.678 4.05a7 7 0 1 1-9.9 9.9 7 7 0 0 1 9.9-9.9Zm2.67 9.742a9 9 0 1 0-2.003 2.24l7.11 7.11 2.122-2.121-7.229-7.229Z" fill="#fff"/>
+    </svg>
+
+    <!-- Chevron top --> 
+    <svg v-if="type ==='chevron-top'" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0_153:457)">
+        <path d="M-9.27754e-08 12.4388L2.12252 14.5612L9 7.68374L15.8775 14.5612L18 12.4388L9 3.43876L-9.27754e-08 12.4388Z" fill="white"/>
+      </g>
+      <defs>
+        <clipPath id="clip0_153:457">
+          <rect width="18" height="18" fill="white" transform="translate(18) rotate(90)"/>
         </clipPath>
       </defs>
     </svg>

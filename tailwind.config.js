@@ -37,6 +37,7 @@ module.exports = {
       50: "50px",
       55: "55px",
       60: "60px",
+      65: "65px",
       70: "70px",
       80: "80px",
       85: "85px",
@@ -61,6 +62,7 @@ module.exports = {
       'container': "theme(container.padding.DEFAULT)",
       'container-xl': "theme(container.padding.xl)",
       '48%': '48%',
+      '49%': '49%',
     },
     extend: {
       colors: {
@@ -135,6 +137,8 @@ module.exports = {
         '47%': '47%',
         '48%': '48%',
         '49%': '49%',
+        'game-image': '178px',
+        'input-filter': '290px',
       },
       maxWidth: {
         'text': '690px',
@@ -147,7 +151,7 @@ module.exports = {
         'content-column': '440px',
         'content-column-lg': '540px',
         'content-column-xl': '640px',
-        'featured-link-title': '240px',
+        'featured-link-title': '290px',
         'gallery-image': '580px',
       },
       height: {
@@ -163,6 +167,10 @@ module.exports = {
         'page-intro-section': '530px',
         'page-intro-section-md': '440px',
         'page-intro-section-lg': '600px',
+        'lessons-single-text-lg': '210px',
+        'lessons-single-text-xl': '182px',
+        'lessons-posts': '450px',
+        'lessons-posts-lg': '1080px',
       },
       maxHeight: {
         'header': '85px',
@@ -175,6 +183,9 @@ module.exports = {
       },
       center: true,
     },
+    fill: theme => ({
+      'gray': theme('colors.gray'),
+    }),
   },
   variants: {
     extend: {

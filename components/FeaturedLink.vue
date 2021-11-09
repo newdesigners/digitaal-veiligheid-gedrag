@@ -30,11 +30,11 @@ export default {
   computed: {
     fileName() {
       if(this.blok.file.filename) {
-        return this.blok.file.title ? this.blok.file.title : this.blok.text;
+        return this.blok.file.name ? this.blok.file.name : this.blok.text;
       } else {
         return this.blok.text;
       }
     },
-  }
+  },
 };
 </script>
