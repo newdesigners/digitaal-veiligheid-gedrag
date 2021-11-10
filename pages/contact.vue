@@ -6,14 +6,34 @@
           <p class="contact__pre-title">Digitaal Veilig Gedrag in het Basisonderwijs</p>
           <h1 class="contact__title">Contact</h1>
         </header>
+        <form name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact">
+        <p>
+          <label>Your Name: <input type="text" name="name" /></label>   
+        </p>
+        <p>
+          <label>Your Email: <input type="email" name="email" /></label>
+        </p>
+        <p>
+          <label>Your Role: <select name="role[]" multiple>
+          <option value="leader">Leader</option>
+          <option value="follower">Follower</option>
+        </select></label>
+        </p>
+        <p>
+          <label>Message: <textarea name="message"></textarea></label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+        </form>
         <div class="contact__form">
-          <form
+          <!-- <form
             method="post"
             name="contact"
             class="contact__form"
             netlify
             netlify-honeypot="bot-field"
-            data-netlify="true"
           >
             <div class="contact__form-inputs">
               <input type="hidden" name="form-name" value="contact">
@@ -77,7 +97,7 @@
                 <Resources type="chevron-right" />
               </button>
             </div>
-          </form>
+          </form> -->
         </div>
       </article>
     </div>
