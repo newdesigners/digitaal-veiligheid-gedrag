@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-
+  
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
@@ -10,16 +10,16 @@ export default {
   head: {
     title: 'digitaal-veilig-gedrag',
     htmlAttrs: {
-      lang: 'nl-Nl'
+      lang: 'nl-Nl',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ]
   },
 
@@ -30,12 +30,12 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/vue-tasty-burgers.js', mode: 'client' },
-    { src: '~/plugins/vue-slick-carousel.js' },
+    { src: '~/plugins/vue-slick-carousel.js', mode: 'client'  },
     { src: '~/plugins/vue-composition-api.js' },
-    { src: '~/plugins/storyblok-rich-text-renderer.js' },
-    { src: '~/plugins/vue-snip.js' },
-    { src: '~/plugins/outside-click-directive.js' },
-    { src: '~/plugins/vue-lodash.js' },
+    { src: '~/plugins/storyblok-rich-text-renderer.js', mode: 'client' },
+    { src: '~/plugins/vue-snip.js', mode: 'client' },
+    { src: '~/plugins/outside-click-directive.js', mode: 'client' },
+    { src: '~/plugins/vue-lodash.js', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -56,7 +56,7 @@ export default {
       'storyblok-nuxt',
       {
         accessToken: process.env.STORYBLOK_SPACE_TOKEN,
-        cacheProvider: 'memory'
+        cacheProvider: 'memory',
       }
     ],
   ],
@@ -72,7 +72,7 @@ export default {
   },
   image: {
     storyblok: {
-      baseURL: 'https://img2.storyblok.com'
+      baseURL: 'https://img2.storyblok.com',
     },
   },
 
@@ -87,6 +87,7 @@ export default {
   generate: {
     fallback: true,
     routes: function (callback) {
+      console.log('Generating routes');
       const token = process.env.STORYBLOK_SPACE_TOKEN;
       const version = 'published';
       let cache_version = 0;
