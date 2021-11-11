@@ -1,47 +1,24 @@
 .text-grid  {
     h2 {
-        @apply text-body-xl text-green pb-10;
+        @apply text-h3 pb-10 lg:text-h3-lg;
     }
-     p {
-        @apply pb-2;
+    
+    p {
+        @apply pb-20 sm:flex lg:w-3/4 xl:w-4/6 2xl:w-7/12;
     }
+
     .grid__items {
-        @apply flex mt-20 justify-between;
+        /*parent of .image__figure*/
+        @apply flex mt-30 justify-between;
     }
 
-/* sm */
-@media (min-width: 640px) {
-    p {
-        width: 580px;
-    }
-}
-/* md */
-@media (min-width: 768px) {
-    p {
-        width: 580px;
-    }
-}
-/* lg */
-@media (min-width: 1024px) {
-    p {
-        width: 580px;
-    }
+    .image {
+        &__figure {
+            /*figure tag*/
+        }
 
-    h2 {
-        font-size: 24px;
+        &__src {
+            /*img tag*/
+        }
     }
-}
-/* xl */
-@media (min-width: 1280px) {
-
-    p {
-        width: 580px;
-    }   
-}
-/* 2xl */
-@media (min-width: 1536px) {
-    p{
-        width: 580px;
-    }
-}
 }
