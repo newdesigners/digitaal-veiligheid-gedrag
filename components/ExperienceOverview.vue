@@ -13,12 +13,7 @@
       </aside>
       <vue-masonry-wall
         :items="suggestions"
-        :options="{
-          width: 600,
-          padding: {
-            default: 20
-          }
-        }"
+        :options="{ width: 600, padding: 20 }"
         :ssr="{ columns: 2 }"
         @append="append"
       > 
@@ -56,7 +51,6 @@ export default {
   },
   methods: {
     async fetchSuggestions(page = 1) {
-      console.log(this.selectedCategory);
       const version = process.env.NODE_ENV !== 'production' ? 'draft' : 'published';
       const res = await this.$storyapi.get('cdn/stories', {
         starts_with: 'ervaringen/',
@@ -71,7 +65,7 @@ export default {
         page,
       });
       this.pageCount = Math.ceil(res.total / this.perPage);
-      console.log(res.data.stories);
+
       return res.data.stories;
     },
     async fetchCategories() {
