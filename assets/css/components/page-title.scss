@@ -1,0 +1,21 @@
+.page-title {
+  &__header {
+    @apply pb-40;
+
+    &--left {
+      @apply text-left;
+    }
+
+    &--center {
+      @apply text-center;
+    }
+  }
+
+  &__pre-title {
+    @apply font-semibold text-blue;
+  }
+
+  &__title {
+    @apply text-green;
+  }
+}

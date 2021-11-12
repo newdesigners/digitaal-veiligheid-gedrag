@@ -31,11 +31,12 @@ export default {
   plugins: [
     { src: '~/plugins/vue-tasty-burgers.js', mode: 'client' },
     { src: '~/plugins/vue-slick-carousel.js', mode: 'client'  },
-    { src: '~/plugins/vue-composition-api.js' },
+    { src: '~/plugins/vue-composition-api.js',  },
     { src: '~/plugins/storyblok-rich-text-renderer.js', mode: 'client' },
     { src: '~/plugins/vue-snip.js', mode: 'client' },
     { src: '~/plugins/outside-click-directive.js', mode: 'client' },
     { src: '~/plugins/vue-lodash.js', mode: 'client' },
+    { src: '~/plugins/vue-masonry-wall.js', },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

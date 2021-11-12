@@ -8,6 +8,7 @@ module.exports = {
     './nuxt.config.{js,ts}',
   ],
   darkMode: false,
+  important: true,
   theme: {
     spacing: {
       0: "0px",

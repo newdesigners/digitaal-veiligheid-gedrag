@@ -1,0 +1,35 @@
+.experience-overview {
+  &__single {
+    @apply p-20 xl:p-40 bg-gray;
+  }
+
+  &__filters {
+    @apply flex justify-end pb-30 items-center;
+    
+    &-label {
+      @apply text-gray-dark pr-20;
+    }
+
+    .dropdown-select {
+      @apply w-input-filter;
+    }
+  }
+
+  .testimonial {
+    &__quote {
+      
+    }
+  }
+
+  .masonry {
+    &-column {
+      &:first-of-type {
+        @apply pl-0 !important;
+      }
+
+      &:last-of-type {
+        @apply pr-0 !important;
+      }
+    }
+  }
+}

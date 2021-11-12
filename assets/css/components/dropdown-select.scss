@@ -31,7 +31,7 @@
     .dropdown-select {
 
       &__value {
-        @apply rounded-b-none border-b-0;
+        @apply rounded-b-none /*border-b-0*/ border-b-transparent;
       }
 
       &__button {
