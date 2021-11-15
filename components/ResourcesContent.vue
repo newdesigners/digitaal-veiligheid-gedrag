@@ -4,7 +4,7 @@
     class="resources-content"
   >
     <article class="container container--inner resources-content__article">
-      <pre>{{ blok }}</pre>
+      <!-- <pre>{{ blok }}</pre> -->
       <h2 class="resources-content__title">{{ blok.title }}</h2>
       <component
         v-for="blok in blok.sources"

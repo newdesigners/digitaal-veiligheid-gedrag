@@ -9,16 +9,18 @@
 
     .grid__items {
         /*parent of .image__figure*/
-        @apply flex mt-30 justify-between;
+        @apply flex flex-wrap mt-30 justify-center lg:justify-start sm:w-full;
     }
 
     .image {
         &__figure {
             /*figure tag*/
+           @apply pb-30 xl:w-1/5 pr-20;
         }
 
         &__src {
             /*img tag*/
+         
         }
     }
 }
