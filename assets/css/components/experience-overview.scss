@@ -1,6 +1,12 @@
 .experience-overview {
   &__single {
-    @apply p-20 xl:p-40 bg-gray;
+    @apply /*p-20 xl:p-40*/ bg-gray;
+
+    .testimonial {
+      &__image {
+        @apply object-cover h-full sm:max-h-testimonial-image-sm lg:max-h-none;
+      }
+    }
   }
 
   &__filters {
