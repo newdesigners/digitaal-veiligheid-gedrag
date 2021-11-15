@@ -2,18 +2,22 @@
   @apply mb-100 bg-gray;
 
   &__experiences {
-    @apply xl:max-w-testimonial-container mx-auto;
+    @apply xl:max-w-testimonial-container mx-auto pb-20 lg:py-40 xl:py-60;
   }
 
   &__slider {
-    @apply py-10 lg:flex !important;
+    @apply /*py-10*/ lg:flex !important;
 
     .slick-slide > div {
-      @apply xl:flex xl:justify-end;
+      @apply lg:flex lg:justify-center xl:justify-end;
     }
 
     .testimonial {
       @apply xl:mr-90;
+
+      &__copy {
+        @apply px-20 sm:pb-0;
+      }
     }
 
     &-dots {
@@ -36,6 +40,14 @@
 
     &-dot {
       @apply block w-slider-dot h-slider-dot bg-gray-light rounded-full;
+    }
+  }
+
+  &__single {
+    .testimonial {
+      &__image {
+        @apply h-full object-cover max-h-testimonial-image sm:max-h-testimonial-image-sm lg:max-h-testimonial-image-lg;
+      }
     }
   }
 }

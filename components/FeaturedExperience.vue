@@ -7,6 +7,7 @@
       <div class="featured-experience__experiences">
         <VueSlickCarousel class="featured-experience__slider" ref="carousel" v-bind="slickOptions">
           <Testimonial
+            class="featured-experience__single"
             v-for="experience in selectedExperiences"
             :key="experience.uuid"
             :content="experience.content"
@@ -30,6 +31,7 @@ export default {
         infinite: false,
         arrows: false,
         dots: true,
+        adaptiveHeight: true,
         dotsClass: 'featured-experience__slider-dots',
         responsive: [
         ],
@@ -46,6 +48,7 @@ export default {
     selectedExperiences() {
       // Load reference data/content from store
       const experiences = this.$store.state.experiences.experiences.filter((e) => {
+        console.log(e);
         return this.blok.experiences.includes(e.uuid);
       });
  

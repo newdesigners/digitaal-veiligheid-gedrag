@@ -97,7 +97,7 @@ export default {
     async fetchCategories() {
       const version = process.env.NODE_ENV !== 'production' ? 'draft' : 'published';
       const res = await this.$storyapi.get('cdn/stories', {
-        starts_with: 'categories/',
+        starts_with: 'categories/lesactiviteiten/',
         version,
       });
       res.data.stories.unshift({ name: 'Alle' });

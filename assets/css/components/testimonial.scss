@@ -1,5 +1,17 @@
 .testimonial {
-  @apply max-w-testimonial py-20;
+  @apply max-w-testimonial /*py-20*/;
+
+  &__figure {
+    @apply w-full;
+  }
+
+  &__image {
+    @apply w-full h-auto;
+  }
+
+  &__copy {
+    @apply px-15 p-20 sm:px-30 lg:py-40 xl:py-60;
+  }
 
   &__quote {
     @apply text-body-md pb-10 lg:text-h3-lg lg:pb-20;

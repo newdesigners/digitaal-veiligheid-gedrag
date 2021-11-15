@@ -72,8 +72,7 @@ export default {
     }
 
     if(context.store.state.experiences.loaded !== '1') {
-      let experiencesRefRes = await context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'ervaringen/', version: version });
-
+      let experiencesRefRes = await context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'ervaringen/', version: version, resolve_relations: 'experience.title' });
       context.store.commit('experiences/setExperiences', experiencesRefRes.data.stories);
       context.store.commit('experiences/setLoaded', '1');
     }
