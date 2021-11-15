@@ -57,6 +57,7 @@ export default {
         version,
         per_page: this.perPage,
         is_startpage: 0,
+        resolve_relations: 'experience.title',
         filter_query: {
           title: {
             in: this.selectedCategory,

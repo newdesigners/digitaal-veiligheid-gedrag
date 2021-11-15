@@ -18,7 +18,7 @@
         <span class="testimonial__quote-mark">“</span><span>{{ content.testimonial }}</span><span>"</span>
       </blockquote>
       <p class="testimonial__name">{{ content.name }}</p>
-      <p class="testimonial__title">{{ content.title }}</p>
+      <p class="testimonial__title">{{ content.title.name }}</p>
     </aside>
   </div>
 </template>
