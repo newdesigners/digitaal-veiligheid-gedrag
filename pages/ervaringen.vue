@@ -1,12 +1,14 @@
 <template>
   <section class="page container">
     <div class="page__content">
-      <component
-        v-if="story.content.component"
-        :key="story.content._uid"
-        :blok="story.content"
-        :is="story.content.component"
-      />
+      <article class="container container--inner page__article">
+        <component
+          v-if="story.content.component"
+          :key="story.content._uid"
+          :blok="story.content"
+          :is="story.content.component"
+        />
+      </article>
     </div>
   </section>
 </template>

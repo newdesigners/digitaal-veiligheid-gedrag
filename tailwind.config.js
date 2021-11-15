@@ -8,6 +8,7 @@ module.exports = {
     './nuxt.config.{js,ts}',
   ],
   darkMode: false,
+  important: true,
   theme: {
     spacing: {
       0: "0px",
@@ -175,6 +176,10 @@ module.exports = {
       },
       maxHeight: {
         'header': '85px',
+        'testimonial-image': '260px',
+        'testimonial-image-sm': '300px',
+        'testimonial-image-lg': '450px',
+        'none': 'none',
       },
     },
     container: {
