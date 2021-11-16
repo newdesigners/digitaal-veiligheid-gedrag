@@ -16,6 +16,8 @@
         &__figure {
             /*figure tag*/
            @apply pb-30 xl:w-1/5 pr-20;
+           @apply w-230 h-130 flex justify-center items-center;
+           @apply md:w-210; 
         }
 
         &__src {
