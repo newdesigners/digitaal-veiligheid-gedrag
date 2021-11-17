@@ -48,7 +48,6 @@ export default {
     selectedExperiences() {
       // Load reference data/content from store
       const experiences = this.$store.state.experiences.experiences.filter((e) => {
-        console.log(e);
         return this.blok.experiences.includes(e.uuid);
       });
  
