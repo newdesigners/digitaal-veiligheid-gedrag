@@ -48,12 +48,4 @@
       @apply max-w-none;
     }
   }
-
-  &__error {
-    @apply w-full;
-
-    &-title {
-      @apply py-40 lg:py-80 text-center;
-    }
-  }
 }

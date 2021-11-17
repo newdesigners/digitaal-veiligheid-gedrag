@@ -11,7 +11,14 @@
           :options="categories"
         />
       </aside>
+      <div v-if="suggestions.length === 0 && selectedCategory !== undefined" class="error-filter">
+        <h3 class="error-filter__title">Geen resultaten gevonden :(</h3>
+      </div>
+      <div v-if="suggestions.length === 0 && selectedCategory === undefined" class="error-filter">
+        <h3 class="error-filter__title">Ervaringen worden geladen...</h3>
+      </div>
       <vue-masonry-wall
+        v-if="suggestions.length > 0"
         :items="suggestions"
         :options="{ width: 600, padding: 20 }"
         :ssr="{ columns: 2 }"
@@ -33,7 +40,7 @@ export default {
     return {
       suggestions: [],
       categories: [],
-      selectedCategory: {},
+      selectedCategory: undefined,
       perPage: 8,
       pageCount: 0,
       currentPage: 1,
@@ -66,7 +73,6 @@ export default {
         page,
       });
       this.pageCount = Math.ceil(res.total / this.perPage);
-
       return res.data.stories;
     },
     async fetchCategories() {

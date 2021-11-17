@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import { createSEOMeta } from '~/assets/js/utils/seo.js';
+
 export default {
   data () {
     return {
@@ -44,7 +46,6 @@ export default {
     // // This what would we do in real project
     const version = context.query._storyblok || context.isDev ? 'draft' : 'published';
     const fullSlug = (context.route.path == '/' || context.route.path == '') ? 'home' : context.route.path;
-    console.log(fullSlug);
     // Load the JSON from the API - loadig the home content (index page)
     return context.app.$storyapi.get(`cdn/stories/${ fullSlug }`, {
       version: version
@@ -79,6 +80,18 @@ export default {
       context.store.commit('lessons/setLessons', lessonsRefRes.data.stories);
       context.store.commit('lessons/setLoaded', '1');
     }
+  },
+  head() {
+    const url = this.story.full_slug;
+    const seo = this.story.content.seo;
+    const title = this.story.content.seo.title = this.story.content.seo.title ? this.story.content.seo.title : `Digitale Veilig Gedrag | ${ this.story.name }`;
+    return {
+      title,
+      meta: createSEOMeta({
+        url,
+        seo,
+      }),
+    };
   },
 };
 </script>

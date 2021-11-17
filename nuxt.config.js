@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { createSEOMeta } from './assets/js/utils/seo.js';
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -8,14 +9,21 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'digitaal-veilig-gedrag',
+    title: 'Digitaal Veilig Gedrag in het Basisonderwijs',
     htmlAttrs: {
       lang: 'nl-Nl',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      ...createSEOMeta({
+        url: '',
+        seo: {
+          title: 'Digitaal Veilig Gedrag in het Basisonderwijs',
+          og_image: 'https://nuxt.config.js/default-image-here.png',
+          twitter_image: 'https://nuxt.config.js/default-image-here.png',
+          description: 'nuxt.config.js default description',
+      }}),
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
@@ -24,8 +32,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
+  css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
