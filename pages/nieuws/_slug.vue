@@ -77,8 +77,8 @@ export default {
         meta: createSEOMeta({
           url,
           seo,
-        })
-      }
+        }),
+      };
     }
   },
 };
