@@ -1,10 +1,9 @@
 <template>
   <article class="container container--inner post">
-    <!-- <pre>{{ blok }}</pre> -->
     <div class="post__intro">
       <h1 class="post__title">{{ post.title }}</h1>
     </div>
-    <figure class="post__figure">
+    <figure class="post__figure" v-if="post.featured_image">
       <NuxtPicture
         v-if="post.featured_image.filename"  
         class="post__image"

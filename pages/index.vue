@@ -87,7 +87,7 @@ export default {
       title,
       meta: createSEOMeta({
         url,
-        seo
+        seo,
       })
     }
   },
