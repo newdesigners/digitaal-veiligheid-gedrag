@@ -14,4 +14,12 @@
       }
     }
   }
+
+  &-filter {
+    @apply w-full;
+    
+    &__title {
+      @apply py-40 lg:py-80 text-center;
+    }
+  }
 }

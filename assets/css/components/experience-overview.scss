@@ -1,4 +1,8 @@
 .experience-overview {
+  &__article {
+    @apply pb-60 lg:pb-100;
+  }
+
   &__single {
     @apply /*p-20 xl:p-40*/ bg-gray;
 

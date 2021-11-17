@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import { createSEOMeta } from '~/assets/js/utils/seo.js';
+
 export default {
   data () {
     return {
@@ -71,6 +73,18 @@ export default {
       context.store.commit('news/setNews', newsRefRes.data.stories);
       context.store.commit('news/setLoaded', '1');
     }
+  },
+  head() {
+    const url = this.story.full_slug;
+    const seo = this.story.content.seo;
+    const title = this.story.content.seo.title = this.story.content.seo.title ? this.story.content.seo.title : `Digitale Veilig Gedrag | ${ this.story.name }`;
+    return {
+      title,
+      meta: createSEOMeta({
+        url,
+        seo,
+      }),
+    };
   },
 };
 </script>
