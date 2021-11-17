@@ -38,7 +38,6 @@ export default {
       this.isOpen = !this.isOpen;
     },
     select(i) {
-      console.log(i);
       this.selected = i;
       this.$emit('getCategory', i);
       this.closeDropdown();
