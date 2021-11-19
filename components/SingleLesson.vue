@@ -15,7 +15,7 @@ export default {
     }
   },
   async mounted() {
-      let newsRefRes = await this.$storyapi.get(`cdn/stories/`, {
+      let lessonRequest = await this.$storyapi.get(`cdn/stories/`, {
         starts_with: 'lesactiviteiten/',
         version: 'draft',
         is_startpage: 0,
@@ -23,8 +23,7 @@ export default {
         per_page: 1,
       });
    
-      this.latestLesson = newsRefRes.data.stories;
-      console.log(this.latestLesson);
+      this.latestLesson = lessonRequest.data.stories;
   },
   props: {
     blok: {
@@ -32,7 +31,5 @@ export default {
       required: true,
     },
   },
-  methods: {
-  }
 };
 </script>

@@ -51,7 +51,6 @@ export default {
     return context.app.$storyapi.get(`cdn/stories/${ fullSlug }`, {
       version: version
     }).then((res) => {
-      console.log(res.data);
       return res.data
     }).catch((res) => {
       if (!res.response) {
