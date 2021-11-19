@@ -72,6 +72,20 @@
     .featured-link {
       @apply max-w-text-image-copy;
     }
+
+    .lessons {
+      &__single {
+        @apply w-full;
+
+        &-body {
+          @apply lg:text-body-lg;
+        }
+
+        .featured-link {
+          @apply mb-0;
+        }
+      }
+    }
   }
 
   &__image {

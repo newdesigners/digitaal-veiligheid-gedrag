@@ -1,12 +1,12 @@
 <template>
   <section class="page container">
     <div class="page__content">
-      <component
+      <!-- <component
         v-if="story.content.component"
         :key="story.content._uid"
         :blok="story.content"
         :is="story.content.component"
-      />
+      /> -->
     </div>
   </section>
 </template>
@@ -51,6 +51,7 @@ export default {
     return context.app.$storyapi.get(`cdn/stories/${ fullSlug }`, {
       version: version
     }).then((res) => {
+      console.log(res.data);
       return res.data
     }).catch((res) => {
       if (!res.response) {
@@ -67,10 +68,16 @@ export default {
     let version = context.query._storyblok || context.isDev ? 'draft' : 'published';
     // Loading reference data - News in our case
     if(context.store.state.news.loaded !== '1') {
-      let newsRefRes = await context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'nieuws/', version: version });
+      let newsRefRes = await context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'nieuws/', version: version, is_startpage: 0 });
 
       context.store.commit('news/setNews', newsRefRes.data.stories);
       context.store.commit('news/setLoaded', '1');
+    }
+
+    if(context.store.state.experiences.loaded !== '1') {
+      let experiencesRefRes = await context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'ervaringen/', version: version, resolve_relations: 'experience.title', is_startpage: 0 });
+      context.store.commit('experiences/setExperiences', experiencesRefRes.data.stories);
+      context.store.commit('experiences/setLoaded', '1');
     }
   },
   head() {

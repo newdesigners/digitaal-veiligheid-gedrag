@@ -66,19 +66,16 @@ export default {
     let version = context.query._storyblok || context.isDev ? 'draft' : 'published';
     // Loading reference data - News in our case
     if(context.store.state.news.loaded !== '1') {
-      let newsRefRes = await context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'nieuws/', version: version });
+      let newsRefRes = await context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'nieuws/', version: version, is_startpage: 0 });
 
       context.store.commit('news/setNews', newsRefRes.data.stories);
       context.store.commit('news/setLoaded', '1');
     }
 
-    //TODO: NOT SURE IF THIS IS NEEDED SINCE WE ARE GETTING THE LESSONS DIRECTLY IN THE COMPONENT ITSELF; THIS IS BAD IF WE ARE GETTING ALL THE LESSONS AND ITS LIKE 100 PAGES; WE ARE GETTING DATA THAT ARENT EVEN SHOWN;
-
-    if(context.store.state.lessons.loaded !== '1') {
-      let lessonsRefRes = await context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'lesactiviteiten/', version: version });
-
-      context.store.commit('lessons/setLessons', lessonsRefRes.data.stories);
-      context.store.commit('lessons/setLoaded', '1');
+    if(context.store.state.experiences.loaded !== '1') {
+      let experiencesRefRes = await context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'ervaringen/', version: version, resolve_relations: 'experience.title', is_startpage: 0 });
+      context.store.commit('experiences/setExperiences', experiencesRefRes.data.stories);
+      context.store.commit('experiences/setLoaded', '1');
     }
   },
   head() {
