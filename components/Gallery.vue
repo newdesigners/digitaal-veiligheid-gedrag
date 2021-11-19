@@ -1,6 +1,6 @@
 <template>
   <div class="gallery" v-editable="blok">
-    <ImageContent width="690" height="468" sizes="xs:350px sm:580px md:690px" v-for="image in blok.images" :blok="image" :key="image._uid" />
+    <ImageContent width="1280" height="869" sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:100vw" v-for="image in blok.images" :blok="image" :key="image._uid" />
   </div>
 </template>
  

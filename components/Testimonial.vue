@@ -4,8 +4,8 @@
       <NuxtImg
         v-if="content.image.filename"
         class="testimonial__image"
-        width="840"
-        height="450"
+        width="1280"
+        height="686"
         sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:100vw"
         :modifiers="{ smart: true }"
         provider="storyblok"
