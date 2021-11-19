@@ -1,5 +1,5 @@
 .button {
-  @apply font-poppins text-h4 py-12 px-20 bg-white inline-flex rounded items-center justify-center;
+  @apply font-poppins text-h4 py-12 px-20 bg-white inline-flex rounded items-center justify-center hover:bg-primary hover:text-white;
 
   &__label {
     @apply pr-10 lg:pr-40;
