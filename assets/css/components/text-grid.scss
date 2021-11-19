@@ -10,11 +10,16 @@
             h2 {
                 @apply text-h2 lg:text-h2-lg text-green;
             }
+            
 
             .grid-icon-text {
                 &__icon {
                     /* width of max-width geven*/
+
                 }
+            }
+            .grid-icon-text__description {
+                    width: 275px;
             }
         }
     }
@@ -35,7 +40,7 @@
     .image {
         &__figure {
             /*figure tag*/
-           @apply pb-30 xl:w-1/5 pr-20;
+           @apply pb-30 xl:w-1/5;
            @apply w-230 h-130 flex justify-center items-center;
            @apply md:w-210; 
         }
