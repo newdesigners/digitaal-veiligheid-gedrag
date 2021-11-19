@@ -1,4 +1,10 @@
-.text-grid  {
+.text-grid {
+    &__article {
+        &--highlight {
+            /* styles van onderzoeksvraag hier */
+            
+        }
+    }
     h2 {
         @apply text-h3 pb-10 lg:text-h3-lg;
     }
