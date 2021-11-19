@@ -1,7 +1,21 @@
 .text-grid {
     &__article {
+        @apply pb-50 lg:pb-100;
+
         &--highlight {
             /* styles van onderzoeksvraag hier */
+            @apply pb-0;
+            @apply bg-gray-lightest;
+
+            h2 {
+                @apply text-h2 lg:text-h2-lg text-green;
+            }
+
+            .grid-icon-text {
+                &__icon {
+                    /* width of max-width geven*/
+                }
+            }
         }
     }
     
