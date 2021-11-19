@@ -44,7 +44,7 @@ export default {
     return context.app.$storyapi.get(`cdn/stories/nieuws/${ context.params.slug }`, {
       version: version
     }).then((res) => {
-      return res.data
+      return res.data;
     }).catch((res) => {
       if (!res.response) {
         console.error(res);

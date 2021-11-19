@@ -1,12 +1,12 @@
 <template>
   <section class="page container">
     <div class="page__content">
-      <!-- <component
+      <component
         v-if="story.content.component"
         :key="story.content._uid"
         :blok="story.content"
         :is="story.content.component"
-      /> -->
+      />
     </div>
   </section>
 </template>
@@ -51,7 +51,7 @@ export default {
     return context.app.$storyapi.get(`cdn/stories/${ fullSlug }`, {
       version: version
     }).then((res) => {
-      return res.data
+      return res.data;
     }).catch((res) => {
       if (!res.response) {
         console.error(res);
