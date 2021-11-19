@@ -11,11 +11,19 @@
 
   &__list {
     & .slider {
-      @apply flex flex-wrap xl:justify-between;
+      @apply flex flex-wrap md:justify-between;
     }
 
     &-item {
-      @apply pr-10 md:pr-40 xl:pr-0;
+      @apply pr-10 md:w-49% md:pr-0 xl:w-32%;
+
+      .card {
+        @apply md:max-w-none;
+
+        &__figure {
+          @apply md:w-full;
+        }
+      }
     }
   }
 

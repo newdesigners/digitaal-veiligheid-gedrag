@@ -95,7 +95,6 @@ export default {
   generate: {
     fallback: true,
     routes: function (callback) {
-      console.log('Generating routes');
       const token = process.env.STORYBLOK_SPACE_TOKEN;
       const version = 'published';
       let cache_version = 0;

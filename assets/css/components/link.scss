@@ -1,7 +1,16 @@
 .link {
-  @apply text-h4 lg:text-h4-lg font-poppins underline text-blue inline-flex items-center font-bold;
+  @apply text-h4 lg:text-h4-lg font-poppins underline text-blue inline-flex items-center font-bold hover:text-primary;
 
   &__label {
     @apply break-words pr-9;
   }
+
+  &:hover {
+    svg {
+      path {
+        @apply fill-primary;
+      }
+    }
+  }
 }
+

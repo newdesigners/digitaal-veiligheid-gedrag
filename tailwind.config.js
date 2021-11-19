@@ -60,7 +60,10 @@ module.exports = {
       'header': "theme(height.header)",
       'header-lg': "theme(height.header-lg)",
       'container': "theme(container.padding.DEFAULT)",
+      'container-lg': "theme(container.padding.lg)",
       'container-xl': "theme(container.padding.xl)",
+      '31%': '31%',
+      '32%': '32%',
       '48%': '48%',
       '49%': '49%',
       'initial' : 'innital',
@@ -185,12 +188,14 @@ module.exports = {
     container: {
       padding: {
         DEFAULT: '20px',
-        xl: '30px',
+        lg: '30px',
+        xl: '40px',
       },
       center: true,
     },
     fill: theme => ({
       'gray': theme('colors.gray'),
+      'primary': theme('colors.primary'),
     }),
   },
   variants: {

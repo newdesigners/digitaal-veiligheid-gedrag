@@ -7,10 +7,9 @@
       <NuxtPicture
         v-if="post.featured_image.filename"  
         class="post__image"
-        width="280"
-        height="175"
-        sizes="sm:280px md:688px lg:944px xl:1200px"
-        format="webp"
+        width="1280"
+        height="800"
+        sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
         :modifiers="{ smart: true }"
         provider="storyblok"
         loading="lazy"

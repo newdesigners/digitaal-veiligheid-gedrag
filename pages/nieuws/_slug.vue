@@ -44,7 +44,7 @@ export default {
     return context.app.$storyapi.get(`cdn/stories/nieuws/${ context.params.slug }`, {
       version: version
     }).then((res) => {
-      return res.data
+      return res.data;
     }).catch((res) => {
       if (!res.response) {
         console.error(res);
@@ -54,17 +54,6 @@ export default {
         context.error({ statusCode: res.response.status, message: res.response.data });
       }
     });
-  },
-  async fetch(context) {
-    // TODO: Change version according to the environment;
-    let version = context.query._storyblok || context.isDev ? 'draft' : 'published';
-    // Loading reference data - News in our case
-    if(context.store.state.news.loaded !== '1') {
-      let newsRefRes = await context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'nieuws/', version: version });
-
-      context.store.commit('news/setNews', newsRefRes.data.stories);
-      context.store.commit('news/setLoaded', '1');
-    }
   },
   head() {
     if(this.story.content.seo) {
