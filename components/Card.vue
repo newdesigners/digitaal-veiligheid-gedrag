@@ -5,10 +5,9 @@
       <NuxtImg
         v-if="content.featured_image.filename"
         class="card__image"
-        format="webp"
-        width="240"
-        height="250"
-        sizes="lg:374px"
+        width="1200"
+        height="796"
+        sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:100vw"
         :modifiers="{ smart: true }"
         provider="storyblok"
         :src="content.featured_image.filename"

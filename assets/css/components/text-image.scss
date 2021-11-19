@@ -88,6 +88,6 @@
   }
 
   &__src {
-    @apply w-slanted-image relative z-20 md:w-slanted-image-md lg:w-slanted-image-lg xl:w-slanted-image-xl;
+    @apply w-full relative z-20 md:w-slanted-image-md lg:w-slanted-image-lg xl:w-slanted-image-xl;
   }
 }

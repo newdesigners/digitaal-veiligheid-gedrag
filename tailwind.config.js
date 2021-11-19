@@ -61,6 +61,8 @@ module.exports = {
       'header-lg': "theme(height.header-lg)",
       'container': "theme(container.padding.DEFAULT)",
       'container-xl': "theme(container.padding.xl)",
+      '31%': '31%',
+      '32%': '32%',
       '48%': '48%',
       '49%': '49%',
       'initial' : 'innital',
