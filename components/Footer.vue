@@ -14,7 +14,7 @@
             </div>
         </div>
         <aside class="container footer__legal">
-            <Resources type="hhs-logo-en" classes="footer__legal-logo" />
+            <Resources type="hhs-logo-en" class="footer__legal-logo" />
             <div class="footer__legal-content">
                 <a class="footer__legal-link" href="/">Privacy</a>
                 <a class="footer__legal-link" href="/">Tip aan de redactie</a>

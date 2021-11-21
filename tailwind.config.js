@@ -30,6 +30,7 @@ module.exports = {
       20: "20px",
       25: "25px",
       30: "30px",
+      32: "32px",
       34: "34px",
       36: "36px",
       40: "40px",
@@ -83,6 +84,7 @@ module.exports = {
         gray: {
           DEFAULT: '#F2F2F2',
           light: '#E5E5E5',
+          lightest: '#F8F8F8',
           dark: '#DDDDDD',
         },
         blue: '#00B2CD',
