@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok">
+  <div class="grid-icon-text" v-editable="blok">
     <div class="grid-icon-text__icon">
       <Resources v-if="blok.icon" :type="blok.icon" />
     </div>
