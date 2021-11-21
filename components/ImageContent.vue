@@ -4,7 +4,7 @@
       v-if="blok.image.filename"
       :width="width"
       :height="height"
-      class="image__image"
+      class="image__src"
       :modifiers="{ smart: true }"
       provider="storyblok"
       :src="blok.image.filename"
