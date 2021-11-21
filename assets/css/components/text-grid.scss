@@ -1,51 +1,47 @@
 .text-grid {
-    h2 {
-        @apply text-h3 pb-10 lg:text-h3-lg;
-    }
-    
-    p {
-        @apply pb-20 sm:flex lg:w-3/4 xl:w-4/6 2xl:w-7/12;
-    }
+	h2 {
+		@apply text-h3 pb-10 lg:text-h3-lg;
+	}
+	
+	p {
+		@apply pb-20 sm:flex lg:w-3/4 xl:w-4/6 2xl:w-7/12;
+	}
 
-    .grid__items {
-        @apply flex flex-wrap mt-30 justify-center lg:justify-start sm:w-full;
-    }
+	.grid__items {
+		@apply flex flex-wrap mt-30 justify-center lg:justify-start sm:w-full;
+	}
 
-    .image {
-        &__figure {
-           @apply pb-30 xl:w-1/5 w-230 h-130 flex justify-center items-center md:w-210;
-        }
+	.image {
+		&__figure {
+			@apply pb-30 xl:w-1/5 w-230 h-130 flex justify-center items-center md:w-210;
+		}
+	}
 
-        &__src {
-            /*img tag*/
-        }
-    }
+	&__article {
+		@apply pb-50 lg:pb-100;
 
-    &__article {
-        @apply pb-50 lg:pb-100;
+		&--highlight {
+			@apply mb-60 lg:mb-120 bg-gray-lightest py-40 lg:py-80;
 
-        &--highlight {
-            @apply mb-60 lg:mb-120 bg-gray-lightest py-40 lg:py-80;
+			h2 {
+				@apply text-h2 lg:text-h2-lg text-green lg:pb-20;
+			}
 
-            h2 {
-                @apply text-h2 lg:text-h2-lg text-green lg:pb-20;
-            }
+			.grid__items {
+				@apply sm:justify-between lg:justify-start;
+			}
 
-            .grid__items {
-               @apply sm:justify-between lg:justify-start;
-            }
+			.grid-icon-text {
+				@apply sm:w-1/2 sm:pr-20 lg:w-1/3 xl:w-1/4 2xl:w-1/5 sm:mb-20;
 
-            .grid-icon-text {
-                @apply sm:w-1/2 sm:pr-20 lg:w-1/3 xl:w-1/4 2xl:w-1/5 sm:mb-20;
+					&__icon {
+						@apply mb-10;
+					}
 
-                &__icon {
-                    @apply mb-10;
-                }
-
-                &__description {
-                    @apply w-full;
-                }
-            }
-        }
-    }
+					&__description {
+						@apply w-full;
+					}
+			}
+		}
+	}
 }
