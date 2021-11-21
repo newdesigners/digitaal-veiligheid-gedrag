@@ -1,7 +1,11 @@
 .page {
-	@apply pt-header lg:pt-header-lg;
+	/*@apply pt-header lg:pt-header-lg;*/
 
 	&__content { 
 		@apply bg-white rounded-t-lg overflow-hidden;
+	}
+
+	&__article {
+		@apply pt-40 lg:pt-80;
 	}
 }

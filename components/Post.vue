@@ -1,17 +1,15 @@
 <template>
   <article class="container container--inner post">
-    <!-- <pre>{{ blok }}</pre> -->
     <div class="post__intro">
       <h1 class="post__title">{{ post.title }}</h1>
     </div>
-    <figure class="post__figure">
+    <figure class="post__figure" v-if="post.featured_image">
       <NuxtPicture
         v-if="post.featured_image.filename"  
         class="post__image"
-        width="280"
-        height="175"
-        sizes="sm:280px md:688px lg:944px xl:1200px"
-        format="webp"
+        width="1280"
+        height="800"
+        sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
         :modifiers="{ smart: true }"
         provider="storyblok"
         loading="lazy"
@@ -24,8 +22,8 @@
     </div>
     <aside class="post__read-more">
       <h2 class="post__read-more-title">Lees ook</h2>
-      <ul class="post__read-more-list">
-        <li class="post__read-more-list-item" v-for="p in readMorePosts" :key="p.uuid">
+      <ul class="card__posts-list">
+        <li class="card__posts-list-item" v-for="p in readMorePosts" :key="p.uuid">
           <Card v-if="p.content" :link="p.full_slug" :content="p.content" /> 
         </li>
       </ul>

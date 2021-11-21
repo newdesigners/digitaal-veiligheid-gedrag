@@ -1,0 +1,25 @@
+.error {
+  &__article {
+    @apply flex items-center flex-col py-40 md:py-100 lg:py-120 text-center;
+  }
+
+  &-page {
+    @apply lg:pt-85;
+
+    &__title {
+      @apply pb-10 text-green;
+
+      &-sub {
+        @apply pb-20;
+      }
+    }
+  }
+
+  &-filter {
+    @apply w-full;
+    
+    &__title {
+      @apply py-40 lg:py-80 text-center;
+    }
+  }
+}

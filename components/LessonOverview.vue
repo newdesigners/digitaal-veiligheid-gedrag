@@ -25,10 +25,13 @@
         </div>
       </header>
       <div class="lessons__posts">
-        <div v-if="suggestions.length === 0 && (searchInput !== '' || selectedCategory !== false)" class="lessons__error">
-          <h3 class="lessons__error-title">Geen resultaten gevonden :(</h3>
+        <div v-if="suggestions.length === 0 && (searchInput !== '' || selectedCategory !== undefined)" class="error-filter">
+          <h3 class="error-filter__title">Geen resultaten gevonden :(</h3>
         </div>
-        <LesActiviteit :blok="lesson.content" v-for="lesson in suggestions" :key="lesson.id" />
+        <div v-if="suggestions.length === 0 && searchInput === '' && selectedCategory === undefined" class="error-filter">
+          <h3 class="error-filter__title">Lessen worden geladen...</h3>
+        </div>
+        <Lesson :blok="lesson.content" v-for="lesson in suggestions" :key="lesson.id" />
       </div>
       <footer class="lessons__pagination">
         <BasePagination
@@ -54,7 +57,7 @@ export default {
       searchInput: '',
       suggestions: [],
       categories: [],
-      selectedCategory: {},
+      selectedCategory: undefined,
       perPage: 7,
       pageCount: 0,
       currentPage: 1,
@@ -97,7 +100,7 @@ export default {
     async fetchCategories() {
       const version = process.env.NODE_ENV !== 'production' ? 'draft' : 'published';
       const res = await this.$storyapi.get('cdn/stories', {
-        starts_with: 'categories/',
+        starts_with: 'categories/lesactiviteiten/',
         version,
       });
       res.data.stories.unshift({ name: 'Alle' });

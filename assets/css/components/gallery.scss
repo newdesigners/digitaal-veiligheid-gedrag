@@ -3,7 +3,7 @@
 
   .image {
     &__figure {
-      @apply mb-10 lg:w-48% lg:max-w-gallery-image lg:mb-30 xl:mb-45 2xl:mb-55 2xl:max-w-none;
+      @apply mb-20 lg:w-49% lg:max-w-gallery-image xl:mb-30 2xl:max-w-none;
 
       &:only-child {
         @apply max-w-none w-full h-auto mb-0;

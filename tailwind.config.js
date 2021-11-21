@@ -8,6 +8,7 @@ module.exports = {
     './nuxt.config.{js,ts}',
   ],
   darkMode: false,
+  important: true,
   theme: {
     spacing: {
       0: "0px",
@@ -60,9 +61,13 @@ module.exports = {
       'header': "theme(height.header)",
       'header-lg': "theme(height.header-lg)",
       'container': "theme(container.padding.DEFAULT)",
+      'container-lg': "theme(container.padding.lg)",
       'container-xl': "theme(container.padding.xl)",
+      '31%': '31%',
+      '32%': '32%',
       '48%': '48%',
       '49%': '49%',
+      'initial' : 'innital',
     },
     extend: {
       colors: {
@@ -80,6 +85,7 @@ module.exports = {
           DEFAULT: '#F2F2F2',
           light: '#E5E5E5',
           lightest: '#F8F8F8',
+          dark: '#DDDDDD',
         },
         blue: '#00B2CD',
       },
@@ -175,17 +181,23 @@ module.exports = {
       },
       maxHeight: {
         'header': '85px',
+        'testimonial-image': '260px',
+        'testimonial-image-sm': '300px',
+        'testimonial-image-lg': '450px',
+        'none': 'none',
       },
     },
     container: {
       padding: {
         DEFAULT: '20px',
-        xl: '30px',
+        lg: '30px',
+        xl: '40px',
       },
       center: true,
     },
     fill: theme => ({
       'gray': theme('colors.gray'),
+      'primary': theme('colors.primary'),
     }),
   },
   variants: {

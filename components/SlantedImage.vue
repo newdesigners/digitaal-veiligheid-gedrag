@@ -24,9 +24,18 @@ export default {
       default: false,
     },
   },
+  methods: {
+    transformImage(image, option) {
+      if (!image) return "";
+      if (!option) return image;
+      
+      let service = '/m/';
+      return image + service + option;
+    },
+  },
   computed: {
     escapedUrl() {
-      return this.url.replace(/&/g, "&amp;");
+      return this.transformImage(this.url, '1160x0/smart/').replace(/&/g, "&amp;");
     },
     maskUrl() {
       return this.reverse ? 'url(#shape-mask-reverse)' : 'url(#shape-mask)';

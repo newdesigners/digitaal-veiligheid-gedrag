@@ -1,42 +1,49 @@
 import axios from 'axios';
+import { createSEOMeta } from './assets/js/utils/seo.js';
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  ssr: false,
-
+  
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'digitaal-veilig-gedrag',
+    title: 'Digitaal Veilig Gedrag in het Basisonderwijs',
     htmlAttrs: {
-      lang: 'nl-Nl'
+      lang: 'nl-Nl',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      ...createSEOMeta({
+        url: '',
+        seo: {
+          title: 'Digitaal Veilig Gedrag in het Basisonderwijs',
+          og_image: 'https://nuxt.config.js/default-image-here.png',
+          twitter_image: 'https://nuxt.config.js/default-image-here.png',
+          description: 'nuxt.config.js default description',
+      }}),
+      { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
+  css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/vue-tasty-burgers.js', mode: 'client' },
-    { src: '~/plugins/vue-slick-carousel.js' },
-    { src: '~/plugins/vue-composition-api.js' },
-    { src: '~/plugins/storyblok-rich-text-renderer.js' },
-    { src: '~/plugins/vue-snip.js' },
-    { src: '~/plugins/outside-click-directive.js' },
-    { src: '~/plugins/vue-lodash.js' },
+    { src: '~/plugins/vue-slick-carousel.js', mode: 'client'  },
+    { src: '~/plugins/vue-composition-api.js',  },
+    { src: '~/plugins/storyblok-rich-text-renderer.js', mode: 'client' },
+    { src: '~/plugins/vue-snip.js', mode: 'client' },
+    { src: '~/plugins/outside-click-directive.js', mode: 'client' },
+    { src: '~/plugins/vue-lodash.js', mode: 'client' },
+    { src: '~/plugins/vue-masonry-wall.js', },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -57,7 +64,7 @@ export default {
       'storyblok-nuxt',
       {
         accessToken: process.env.STORYBLOK_SPACE_TOKEN,
-        cacheProvider: 'memory'
+        cacheProvider: 'memory',
       }
     ],
   ],
@@ -73,7 +80,7 @@ export default {
   },
   image: {
     storyblok: {
-      baseURL: 'https://img2.storyblok.com'
+      baseURL: 'https://img2.storyblok.com',
     },
   },
 
@@ -89,33 +96,31 @@ export default {
     fallback: true,
     routes: function (callback) {
       const token = process.env.STORYBLOK_SPACE_TOKEN;
-      const version = process.env.NODE_ENV !== 'production' ? 'draft' : 'published';
-
-      let cache_version = 0;  
-      let toIgnore = [
-        'home',
-      ];
+      const version = 'published';
+      let cache_version = 0;
+   
+      let toIgnore = ['home', 'en/settings'];
       
        // other routes that are not in Storyblok with their slug.
       let routes = ['/']; // adds / directly
    
        // Load space and receive latest cache version key to improve performance
-      axios.get(`https://api.storyblok.com/v1/cdn/spaces/me?token=${ token }`).then((space_res) => {
+      axios.get(`https://api.storyblok.com/v1/cdn/spaces/me?token=${token}`).then((space_res) => {
    
          // timestamp of latest publish
         cache_version = space_res.data.space.version;
    
          // Call for all Links using the Links API: https://www.storyblok.com/docs/Delivery-Api/Links
-        axios.get(`https://api.storyblok.com/v1/cdn/links?token=${ token }&version=${ version }&cv=${ cache_version }&per_page=100`).then((res) => {
+        axios.get(`https://api.storyblok.com/v1/cdn/links?token=${token}&version=${version}&cv=${cache_version}&per_page=100`).then((res) => {
           Object.keys(res.data.links).forEach((key) => {
-            if (!toIgnore.includes(res.data.links[key].slug)) {
+            if(!toIgnore.includes(res.data.links[key].slug)) {
               routes.push('/' + res.data.links[key].slug);
             }
           });
-          
+   
           callback(null, routes);
         });
       });
-    },
+    }
   },
 }
