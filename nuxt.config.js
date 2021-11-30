@@ -20,14 +20,19 @@ export default {
         url: '',
         seo: {
           title: 'Digitaal Veilig Gedrag in het Basisonderwijs',
-          og_image: 'https://nuxt.config.js/default-image-here.png',
-          twitter_image: 'https://nuxt.config.js/default-image-here.png',
+          og_image: 'https://a.storyblok.com/f/129628/1200x627/0776dde446/seo-preview-image.png',
+          twitter_image: 'https://a.storyblok.com/f/129628/1200x627/0776dde446/seo-preview-image.png',
           description: 'nuxt.config.js default description',
       }}),
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+      { rel: 'icon', type:'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+      { rel: 'icon', type:'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
+      { rel: 'manifest', href: '/site.webmanifest' },
+      { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#5bbad5' },
     ]
   },
 
